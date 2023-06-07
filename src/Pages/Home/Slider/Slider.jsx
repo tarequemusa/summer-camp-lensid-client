@@ -19,9 +19,9 @@ const Slider = () => {
                                 BEST DIGITAL PHOTOGRAPHY COURSES FOR YOU
                             </h2>
                         </div>
-                        <div className="flex justify-center mt-10 gap-5 mx-auto">
-                            <button className="btn btn-outline btn-primary">Beginner Level</button>
-                            <button className="btn btn-outline btn-secondary">100% Online</button>
+                        <div className="flex justify-center flex-col lg:flex-row mt-10 gap-5 mx-auto">
+                            <button className="btn btn-outline btn-primary px-12 py-12 content-around text-lg">Beginner Level</button>
+                            <button className="btn btn-outline btn-secondary px-12 py-12 content-around text-lg">100% Online</button>
                         </div>
                     </div>
 
