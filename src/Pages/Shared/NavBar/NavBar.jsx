@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import NavLogo from '../../../assets/lensid-main-logo.png'
-import {useContext} from 'react';
+
 
 const NavBar = () => {
 
@@ -26,7 +26,7 @@ const NavBar = () => {
                     </div>
                     <div>
                         <img className='w-2/5' src={NavLogo} alt="" />
-                        <p className='text-green-950'>Lens ID Institute of Photography</p>
+                        <p className='text-green-950'><small>Lens ID Institute of Photography</small></p>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
