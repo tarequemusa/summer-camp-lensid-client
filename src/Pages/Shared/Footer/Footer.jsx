@@ -4,8 +4,8 @@ import footerLogo from '../../../assets/lensid-main-logo.png'
 const Footer = () => {
     return (
         <div>
-            <div className='flex justify-between items-center p-10 bg-sky-300'>
-                <div className='text-xl font-bold uppercase'>Subscribe to our Newsletter</div>
+            <div className='flex lg:flex-row flex-col justify-between items-center p-10 bg-sky-300'>
+                <div className='text-xl my-4 font-bold uppercase'>Subscribe to our Newsletter</div>
                 <div className="form-control w-80">
                     <div className="relative">
                         <input type="text" placeholder="Enter your email address" className="input input-bordered w-full pr-16" />
@@ -18,24 +18,26 @@ const Footer = () => {
                     <div className='bg-opacity-60 outline rounded-2xl bg-white'>
                         <Link to='/'><img className='p-2 w-3/4' src={footerLogo} alt="" /></Link>
                     </div>
-                    <h3 className="text-xl"><Link to="/"><span className='font-bold'>Lens ID</span></Link><br />Providing reliable tech since 2020</h3>
+                    <h3 className="text-xl"><Link to="/"><span className='font-bold'>Lens ID</span></Link><br />Lens ID Institute of Photography since 2020</h3>
                 </div>
                 <div>
-                    <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <span className="text-xl footer-title">Mailing Address</span>
+                    <p className='text-lg'>
+                        Lens ID Institute of Photography<br />
+                        41 East 11th Street, 11th Floor, Suite 66<br />
+                        New York, New York 10003
+                    </p>
+                    <p className='text-lg'>Email: info@lensid.com</p>
                 </div>
                 <div>
-                    <span className="footer-title">Company</span>
+                    <span className="text-xl footer-title">Company</span>
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
                     <a className="link link-hover">Jobs</a>
                     <a className="link link-hover">Press kit</a>
                 </div>
                 <div>
-                    <span className="footer-title">Legal</span>
+                    <span className="text-xl footer-title">Legal</span>
                     <a className="link link-hover">Terms of use</a>
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
