@@ -26,7 +26,7 @@ const NavBar = () => {
                     </div>
                     <div>
                         <img className='w-2/5' src={NavLogo} alt="" />
-                        <p className='text-green-950'><small>Lens ID Institute of Photography</small></p>
+                        <p className='text-green-950'><small>An Institute of Photography</small></p>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
