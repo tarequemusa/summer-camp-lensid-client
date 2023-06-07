@@ -1,3 +1,4 @@
+import Categories from "../Categories/Categories";
 import Slider from "../Slider/Slider";
 
 
@@ -5,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Slider></Slider>
-            <h2>This is Home</h2>
+            <Categories></Categories>
         </div>
     );
 };
