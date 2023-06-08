@@ -1,6 +1,7 @@
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import ClassItems from "../../Shared/ClassItems/ClassItems";
 import useClass from "../../../hooks/useClass";
+import {Link} from "react-router-dom";
 
 
 const PopularClasses = () => {
@@ -16,14 +17,14 @@ const PopularClasses = () => {
             ></SectionTitle>
             <div className='grid md:grid-cols-2 gap-10'>
                 {
-                    popularItems.map(item => <ClassItems
+                    popularItems.slice(0, 6).map(item => <ClassItems
                         key={item._id}
                         item={item}
                     ></ClassItems>)
                 }
             </div>
             <div className='flex justify-center items-center my-12'>
-                <button className="btn btn-outline border-0 border-b-4">View Full Classes</button>
+                <Link to="/approvedclasses"><button className="btn btn-outline border-0 border-b-4">View Full Classes</button></Link>
             </div>
         </section>
     );
