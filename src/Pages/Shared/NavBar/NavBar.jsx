@@ -7,8 +7,8 @@ const NavBar = () => {
     const navOptions =
         <>
             <li className='text-green-800 text-lg'><Link to="/">Home</Link></li>
-            <li className='text-green-800 text-lg'><Link to="/">Instructor</Link></li>
-            <li className='text-green-800 text-lg'><Link to="/">Classes</Link></li>
+            <li className='text-green-800 text-lg'><Link to="allinstructors">Instructor</Link></li>
+            <li className='text-green-800 text-lg'><Link to="approvedclasses">Classes</Link></li>
             <li className='text-green-800 text-lg'><Link to="/">Blogs</Link></li>
         </>
 

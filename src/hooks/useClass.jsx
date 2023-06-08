@@ -1,19 +1,19 @@
-// import {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
 
-// const useClass = () => {
-//     const [class, setClass] = useState([]);
-//     const [loading, setLoading] = useState(true);
-//     useEffect(() => {
-//         fetch('/public/Classes.json')
-//             .then(res => res.json())
-//             .then(data => {
-//                 setClass(data);
-//                 setLoading(false);
-//             });
-//     }, [])
+const useClass = () => {
+    const [allClass, setAllClass] = useState([]);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        fetch('/public/Classes.json')
+            .then(res => res.json())
+            .then(data => {
+                setAllClass(data);
+                setLoading(false);
+            });
+    }, [])
 
-//     return [class, loading]
-// };
+    return [allClass, loading]
+};
 
-// export default useClass;
+export default useClass;

@@ -1,18 +1,11 @@
-import {useEffect, useState} from "react";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import ClassItems from "../../Shared/ClassItems/ClassItems";
+import useClass from "../../../hooks/useClass";
 
 
 const PopularClasses = () => {
-    const [courses, setCourses] = useState([]);
-    useEffect(() => {
-        fetch('classes.json')
-            .then(res => res.json())
-            .then(data => {
-                const popularItems = data.filter(item => item.category === 'Family Photography')
-                setCourses(popularItems)
-            })
-    }, [])
+    const [allClass] = useClass();
+    const popularItems = allClass.filter(item => item.category === 'Family Photography')
 
     return (
         <section className='mb-12'>
@@ -23,7 +16,7 @@ const PopularClasses = () => {
             ></SectionTitle>
             <div className='grid md:grid-cols-2 gap-10'>
                 {
-                    courses.map(item => <ClassItems
+                    popularItems.map(item => <ClassItems
                         key={item._id}
                         item={item}
                     ></ClassItems>)
