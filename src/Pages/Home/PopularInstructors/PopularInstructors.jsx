@@ -51,11 +51,11 @@ const PopularInstructors = () => {
                     >
                         <div className="flex flex-col items-center justify-center gap-6">
                             <div>
-                                <p className="w-60 text-center"><img className="rounded-full shadow-lg outline" src={instructor.profile_image} alt="" /></p>
+                                <p className="w-60 text-center outline rounded-xl p-2"><img className="rounded-xl shadow-lg outline" src={instructor.profile_image} alt="" /></p>
                             </div>
                             <div>
-                                <p>{instructor.instructor_name}</p>
-                                <p> Number of Classes: {instructor.number_classes}</p>
+                                <p className="text-3xl font-bold">{instructor.instructor_name}</p>
+                                <p className="text-lg font-semibold font-serif text-blue-800"> Number of Classes: {instructor.number_classes}</p>
                             </div>
                         </div>
 

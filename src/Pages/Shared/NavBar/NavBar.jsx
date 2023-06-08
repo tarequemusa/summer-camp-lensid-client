@@ -25,7 +25,7 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div>
-                        <img className='w-2/5' src={NavLogo} alt="" />
+                        <Link to="/"><img className='w-2/5' src={NavLogo} alt="" /></Link>
                         <p className='text-green-950'><small>An Institute of Photography</small></p>
                     </div>
                 </div>
