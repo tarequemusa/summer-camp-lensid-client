@@ -3,6 +3,7 @@ import Categories from "../Categories/Categories";
 import PopularInstructors from "../PopularInstructors/PopularInstructors";
 import Slider from "../Slider/Slider";
 import PopularClasses from "../popularClasses/popularClasses";
+import SignUp from "../SignUp/SignUp";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
             <Categories></Categories>
             <PopularClasses></PopularClasses>
             <PopularInstructors></PopularInstructors>
+            <SignUp></SignUp>
         </div>
     );
 };
