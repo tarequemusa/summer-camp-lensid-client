@@ -6,10 +6,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import "./PopularInstructors.css"
-import {useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 
 
 const PopularInstructors = () => {
+    const [instructors, setInstructors] = useState([]);
+
+    useEffect(() => {
+        fetch('instructors.json')
+            .then(res => res.json())
+            .then(data => setInstructors(data))
+    }, [])
+
     const progressCircle = useRef(null);
     const progressContent = useRef(null);
     const onAutoplayTimeLeft = (s, time, progress) => {
@@ -37,15 +45,22 @@ const PopularInstructors = () => {
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
                 className="mySwiper my-14"
             >
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
+                {
+                    instructors.slice(0, 6).map(instructor => <SwiperSlide
+                        key={instructor._id}
+                    >
+                        <div className="flex flex-col items-center justify-center gap-6">
+                            <div>
+                                <p className="w-60 text-center"><img className="rounded-full shadow-lg outline" src={instructor.profile_image} alt="" /></p>
+                            </div>
+                            <div>
+                                <p>{instructor.instructor_name}</p>
+                                <p> Number of Classes: {instructor.number_classes}</p>
+                            </div>
+                        </div>
+
+                    </SwiperSlide>)
+                }
                 <div className="autoplay-progress" slot="container-end">
                     <svg viewBox="0 0 48 48" ref={progressCircle}>
                         <circle cx="24" cy="24" r="20"></circle>
