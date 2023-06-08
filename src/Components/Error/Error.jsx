@@ -1,14 +1,17 @@
 import {Link, useRouteError} from 'react-router-dom'
-// import useTitle from '../../Hooks/useTitle';
+import {Helmet} from 'react-helmet-async';
 import Lottie from "lottie-react";
 import lottie404 from "../../../public/lottie-404-error.json";
 
 const Error = () => {
     const {error, status} = useRouteError();
-    // useTitle('404')
+
     return (
         <>
             <div className='container flex flex-col items-center justify-center px-5 mx-auto'>
+                <Helmet>
+                    <title>404 | LensID An Institute of Photography</title>
+                </Helmet>
                 <div>
                     <div className='text-center mt-5 rounded-xl w-full'>
                         <Lottie animationData={lottie404} loop={true} />
