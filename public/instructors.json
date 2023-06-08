@@ -1,0 +1,139 @@
+[
+    {
+        "_id": 1,
+        "instructor_name": "John Smith",
+        "profile_image": "https://i.ibb.co/VHqJCK8/1-1.png",
+        "number_classes": 5,
+        "students": 34,
+        "name_classes": [
+            "Introduction to Photography",
+            "Portrait Photography",
+            "Landscape Photography",
+            "Advanced Lighting Techniques",
+            "Travel Photography"
+        ]
+    },
+    {
+        "_id": 2,
+        "instructor_name": "Emily Johnson",
+        "profile_image": "https://i.ibb.co/c80Y8t3/1-2.png",
+        "number_classes": 4,
+        "students": 36,
+        "name_classes": [
+            "Portrait Photography",
+            "Street Photography",
+            "Fashion Photography",
+            "Black and White Photography"
+        ]
+    },
+    {
+        "_id": 3,
+        "instructor_name": "Michael Brown",
+        "profile_image": "https://i.ibb.co/GMtt0hH/1-3.png",
+        "number_classes": 3,
+        "students": 38,
+        "name_classes": [
+            "Landscape Photography",
+            "Night Photography",
+            "Astrophotography"
+        ]
+    },
+    {
+        "_id": 4,
+        "instructor_name": "Sarah Adams",
+        "profile_image": "https://i.ibb.co/P4mjFJQ/1-4.png",
+        "number_classes": 2,
+        "students": 40,
+        "name_classes": [
+            "Street Photography",
+            "Documentary Photography"
+        ]
+    },
+    {
+        "_id": 5,
+        "instructor_name": "David Wilson",
+        "profile_image": "https://i.ibb.co/kSgbJKJ/1-5.png",
+        "number_classes": 3,
+        "students": 32,
+        "name_classes": [
+            "Advanced Lighting Techniques",
+            "Studio Photography",
+            "Product Photography"
+        ]
+    },
+    {
+        "_id": 6,
+        "instructor_name": "Jessica Roberts",
+        "profile_image": "https://i.ibb.co/GJhJ4HD/1-6.png",
+        "number_classes": 2,
+        "students": 35,
+        "name_classes": [
+            "Photo Editing with Adobe Lightroom",
+            "Photo Retouching Techniques"
+        ]
+    },
+    {
+        "_id": 7,
+        "instructor_name": "Karen Thompson",
+        "profile_image": "https://i.ibb.co/0sJ9vQS/1-7.png",
+        "number_classes": 2,
+        "students": 45,
+        "name_classes": [
+            "Wildlife Photography",
+            "Nature Photography"
+        ]
+    },
+    {
+        "_id": 8,
+        "instructor_name": "Alexandra Davis",
+        "profile_image": "https://i.ibb.co/mzcNnCP/1-8.png",
+        "number_classes": 2,
+        "students": 25,
+        "name_classes": [
+            "Food Photography",
+            "Product Styling"
+        ]
+    },
+    {
+        "_id": 9,
+        "instructor_name": "Christopher Evans",
+        "profile_image": "https://i.ibb.co/z24cZ1g/1-9.png",
+        "number_classes": 2,
+        "students": 24,
+        "name_classes": [
+            "Fashion Photography",
+            "Editorial Photography"
+        ]
+    },
+    {
+        "_id": 10,
+        "instructor_name": "Samuel Rodriguez",
+        "profile_image": "https://i.ibb.co/0YVhqq3/1-10.png",
+        "number_classes": 2,
+        "students": 28,
+        "name_classes": [
+            "Astrophotography",
+            "Night Sky Photography"
+        ]
+    },
+    {
+        "_id": 11,
+        "instructor_name": "Jennifer Lewis",
+        "profile_image": "https://i.ibb.co/2jtVMbJ/1-11.png",
+        "number_classes": 1,
+        "students": 30,
+        "name_classes": [
+            "Black and White Photography"
+        ]
+    },
+    {
+        "_id": 12,
+        "instructor_name": "Daniel Moore",
+        "profile_image": "https://i.ibb.co/thrVjBS/1-12.png",
+        "number_classes": 1,
+        "students": 44,
+        "name_classes": [
+            "Travel Photography"
+        ]
+    }
+]

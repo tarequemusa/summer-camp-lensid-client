@@ -1,9 +1,14 @@
 import {FaCamera} from "react-icons/fa";
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 const Categories = () => {
     return (
-        <>
-            <h3 className="text-4xl text-center divider font-bold mt-24">Categories</h3>
+        <section>
+            <SectionTitle
+                heading={"Categories"}
+                subHeading={"Lifetime access, anywhere, anytime"}
+            >
+            </SectionTitle>
             <div className="grid grid-cols-1 lg:grid-cols-3 p-10 mx-auto">
                 <div className="card w-full">
                     <div className="card-body">
@@ -66,7 +71,8 @@ const Categories = () => {
                     </div>
                 </div>
 
-            </div></>
+            </div>
+        </section>
     );
 };
 

@@ -1,5 +1,7 @@
 import Categories from "../Categories/Categories";
+import PopularInstructors from "../PopularInstructors/PopularInstructors";
 import Slider from "../Slider/Slider";
+import PopularClasses from "../popularClasses/popularClasses";
 
 
 const Home = () => {
@@ -7,6 +9,8 @@ const Home = () => {
         <div>
             <Slider></Slider>
             <Categories></Categories>
+            <PopularClasses></PopularClasses>
+            <PopularInstructors></PopularInstructors>
         </div>
     );
 };

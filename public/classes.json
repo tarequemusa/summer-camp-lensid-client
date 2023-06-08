@@ -1,0 +1,122 @@
+[
+    {
+        "_id": 1,
+        "course_name": "Introduction to Photography",
+        "category": "Beginner",
+        "image_link": "https://example.com/intro_photo.jpg",
+        "duration": "4 weeks",
+        "instructor": "John Smith",
+        "seats_available": 50,
+        "student_capacity": 100,
+        "course_intro": "Learn the basics of photography, including camera settings, composition, and lighting techniques.",
+        "course_fee": "99"
+    },
+    {
+        "_id": 2,
+        "course_name": "Portrait Photography",
+        "category": "Intermediate",
+        "image_link": "https://example.com/portrait_photo.jpg",
+        "duration": "6 weeks",
+        "instructor": "Emily Johnson",
+        "seats_available": 40,
+        "student_capacity": 80,
+        "course_intro": "Master the art of capturing compelling portraits, working with models, and post-processing techniques.",
+        "course_fee": "149"
+    },
+    {
+        "_id": 3,
+        "course_name": "Landscape Photography",
+        "category": "Intermediate",
+        "image_link": "https://example.com/landscape_photo.jpg",
+        "duration": "8 weeks",
+        "instructor": "Michael Brown",
+        "seats_available": 30,
+        "student_capacity": 60,
+        "course_intro": "Explore the beauty of landscapes, learn about composition, filters, and editing for breathtaking results.",
+        "course_fee": "199"
+    },
+    {
+        "_id": 4,
+        "course_name": "Street Photography",
+        "category": "Intermediate",
+        "image_link": "https://example.com/street_photo.jpg",
+        "duration": "4 weeks",
+        "instructor": "Sarah Adams",
+        "seats_available": 35,
+        "student_capacity": 70,
+        "course_intro": "Capture the essence of urban life, discover storytelling through candid street photography.",
+        "course_fee": "129"
+    },
+    {
+        "_id": 5,
+        "course_name": "Advanced Lighting Techniques",
+        "category": "Family Photography",
+        "image_link": "https://i.ibb.co/GPrQHBb/White-Simple-Mountain-Quotes-Facebook-Post.png",
+        "duration": "6 weeks",
+        "instructor": "David Wilson",
+        "seats_available": 25,
+        "student_capacity": 50,
+        "course_intro": "Master complex lighting setups, including studio lighting, off-camera flash, and advanced light modifiers.",
+        "course_fee": "249"
+    },
+    {
+        "_id": 6,
+        "course_name": "Photo Editing with Adobe Lightroom",
+        "category": "Family Photography",
+        "image_link": "https://i.ibb.co/5YtJghB/White-Simple-Mountain-Quotes-Facebook-Post-1.png",
+        "duration": "4 weeks",
+        "instructor": "Jessica Roberts",
+        "seats_available": 20,
+        "student_capacity": 40,
+        "course_intro": "Learn professional photo editing techniques using Adobe Lightroom, from basic adjustments to advanced retouching.",
+        "course_fee": "179"
+    },
+    {
+        "id": 7,
+        "course_name": "Wildlife Photography",
+        "category": "Family Photography",
+        "image_link": "https://i.ibb.co/BCQBtp7/White-Simple-Mountain-Quotes-Facebook-Post-2.png",
+        "duration": "8 weeks",
+        "instructor": "Karen Thompson",
+        "seats_available": 15,
+        "student_capacity": 30,
+        "course_intro": "Capture stunning images of wildlife in their natural habitats, learn about animal behavior and telephoto lens techniques.",
+        "course_fee": "229"
+    },
+    {
+        "_id": 8,
+        "course_name": "Food Photography",
+        "category": "Family Photography",
+        "image_link": "https://i.ibb.co/jT4BR94/White-Simple-Mountain-Quotes-Facebook-Post-3.png",
+        "duration": "4 weeks",
+        "instructor": "Alexandra Davis",
+        "seats_available": 25,
+        "student_capacity": 50,
+        "course_intro": "Master the art of food styling and composition, create mouthwatering images for cookbooks, blogs, and social media.",
+        "course_fee": "149"
+    },
+    {
+        "_id": 9,
+        "course_name": "Fashion Photography",
+        "category": "Family Photography",
+        "image_link": "https://i.ibb.co/Vw285DM/White-Simple-Mountain-Quotes-Facebook-Post-4.png",
+        "duration": "6 weeks",
+        "instructor": "Christopher Evans",
+        "seats_available": 20,
+        "student_capacity": 40,
+        "course_intro": "Learn how to capture stunning fashion images, work with models, collaborate with stylists, and create a captivating portfolio.",
+        "course_fee": "199"
+    },
+    {
+        "_id": 10,
+        "course_name": "Astrophotography",
+        "category": "Family Photography",
+        "image_link": "https://i.ibb.co/hWwzKtk/White-Simple-Mountain-Quotes-Facebook-Post-5.png",
+        "duration": "8 weeks",
+        "instructor": "Samuel Rodriguez",
+        "seats_available": 15,
+        "student_capacity": 30,
+        "course_intro": "Explore the cosmos through photography, learn techniques to capture stunning images of stars, planets, and the Milky Way.",
+        "course_fee": "249"
+    }
+]
