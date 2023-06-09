@@ -1,10 +1,12 @@
 [
     {
-        "_id": 1,
+        "_id": 31,
         "instructor_name": "John Smith",
         "profile_image": "https://i.ibb.co/VHqJCK8/1-1.png",
-        "number_classes": 5,
-        "students": 34,
+        "email": "john@gmail.com",
+        "total_classes": 5,
+        "enrolled_students": 34,
+        "category": "Family Photography",
         "name_classes": [
             "Introduction to Photography",
             "Portrait Photography",
@@ -14,11 +16,13 @@
         ]
     },
     {
-        "_id": 2,
+        "_id": 32,
         "instructor_name": "Emily Johnson",
         "profile_image": "https://i.ibb.co/c80Y8t3/1-2.png",
-        "number_classes": 4,
-        "students": 36,
+        "email": "emily@gmail.com",
+        "total_classes": 4,
+        "enrolled_students": 36,
+        "category": "Family Photography",
         "name_classes": [
             "Portrait Photography",
             "Street Photography",
@@ -27,11 +31,13 @@
         ]
     },
     {
-        "_id": 3,
+        "_id": 33,
         "instructor_name": "Michael Brown",
         "profile_image": "https://i.ibb.co/GMtt0hH/1-3.png",
-        "number_classes": 3,
-        "students": 38,
+        "email": "michael@gmail.com",
+        "total_classes": 3,
+        "enrolled_students": 38,
+        "category": "Family Photography",
         "name_classes": [
             "Landscape Photography",
             "Night Photography",
@@ -39,22 +45,26 @@
         ]
     },
     {
-        "_id": 4,
+        "_id": 34,
         "instructor_name": "Sarah Adams",
         "profile_image": "https://i.ibb.co/P4mjFJQ/1-4.png",
-        "number_classes": 2,
-        "students": 40,
+        "email": "sarah@gmail.com",
+        "total_classes": 2,
+        "enrolled_students": 40,
+        "category": "Family Photography",
         "name_classes": [
             "Street Photography",
             "Documentary Photography"
         ]
     },
     {
-        "_id": 5,
+        "_id": 35,
         "instructor_name": "David Wilson",
         "profile_image": "https://i.ibb.co/kSgbJKJ/1-5.png",
-        "number_classes": 3,
-        "students": 32,
+        "email": "david@gmail.com",
+        "total_classes": 3,
+        "enrolled_students": 32,
+        "category": "Photo Editing",
         "name_classes": [
             "Advanced Lighting Techniques",
             "Studio Photography",
@@ -62,76 +72,90 @@
         ]
     },
     {
-        "_id": 6,
+        "_id": 36,
         "instructor_name": "Jessica Roberts",
         "profile_image": "https://i.ibb.co/GJhJ4HD/1-6.png",
-        "number_classes": 2,
-        "students": 35,
+        "email": "jessica@gmail.com",
+        "total_classes": 2,
+        "enrolled_students": 35,
+        "category": "Photo Editing",
         "name_classes": [
             "Photo Editing with Adobe Lightroom",
             "Photo Retouching Techniques"
         ]
     },
     {
-        "_id": 7,
+        "_id": 37,
         "instructor_name": "Karen Thompson",
         "profile_image": "https://i.ibb.co/0sJ9vQS/1-7.png",
-        "number_classes": 2,
-        "students": 45,
+        "email": "karen@gmail.com",
+        "total_classes": 2,
+        "enrolled_students": 45,
+        "category": "Photo Editing",
         "name_classes": [
             "Wildlife Photography",
             "Nature Photography"
         ]
     },
     {
-        "_id": 8,
+        "_id": 38,
         "instructor_name": "Alexandra Davis",
         "profile_image": "https://i.ibb.co/mzcNnCP/1-8.png",
-        "number_classes": 2,
-        "students": 25,
+        "email": "alexandra@gmail.com",
+        "total_classes": 2,
+        "enrolled_students": 25,
+        "category": "Photo Editing",
         "name_classes": [
             "Food Photography",
             "Product Styling"
         ]
     },
     {
-        "_id": 9,
+        "_id": 39,
         "instructor_name": "Christopher Evans",
         "profile_image": "https://i.ibb.co/z24cZ1g/1-9.png",
-        "number_classes": 2,
-        "students": 24,
+        "email": "christopher@gmail.com",
+        "total_classes": 2,
+        "enrolled_students": 24,
+        "category": "Mobile Photography",
         "name_classes": [
             "Fashion Photography",
             "Editorial Photography"
         ]
     },
     {
-        "_id": 10,
+        "_id": 40,
         "instructor_name": "Samuel Rodriguez",
         "profile_image": "https://i.ibb.co/0YVhqq3/1-10.png",
-        "number_classes": 2,
-        "students": 28,
+        "email": "samuel@gmail.com",
+        "total_classes": 2,
+        "enrolled_students": 28,
+        "category": "Mobile Photography",
         "name_classes": [
             "Astrophotography",
             "Night Sky Photography"
         ]
     },
     {
-        "_id": 11,
+        "_id": 41,
         "instructor_name": "Jennifer Lewis",
         "profile_image": "https://i.ibb.co/2jtVMbJ/1-11.png",
-        "number_classes": 1,
-        "students": 30,
+        "email": "jenifer@gmail.com",
+        "total_classes": 1,
+        "enrolled_students": 30,
+        "category": "Mobile Photography",
         "name_classes": [
             "Black and White Photography"
         ]
     },
     {
-        "_id": 12,
+        "_id": 42,
         "instructor_name": "Daniel Moore",
         "profile_image": "https://i.ibb.co/thrVjBS/1-12.png",
-        "number_classes": 1,
-        "students": 44,
+        "email": "daniel@gmail.com",
+        "total_classes": 1,
+        "enrolled_students": 44,
+        "category": "Mobile Photography",
         "name_classes": [
             "Travel Photography"
         ]

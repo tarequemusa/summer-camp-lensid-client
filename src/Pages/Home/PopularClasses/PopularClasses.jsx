@@ -15,7 +15,7 @@ const PopularClasses = () => {
                 PHOTOGRAPHY SKILLS"
                 heading="Popular Classes"
             ></SectionTitle>
-            <div className='grid md:grid-cols-2 gap-10'>
+            <div className='grid md:grid-cols-2 gap-10 px-10'>
                 {
                     popularItems.slice(0, 6).map(item => <ClassItems
                         key={item._id}
@@ -24,7 +24,7 @@ const PopularClasses = () => {
                 }
             </div>
             <div className='flex justify-center items-center my-12'>
-                <Link to="/approvedclasses"><button className="btn btn-outline border-0 border-b-4">View Full Classes</button></Link>
+                <Link to="/approvedclasses"><button className="btn btn-outline btn-primary border-1">View Full Classes</button></Link>
             </div>
         </section>
     );

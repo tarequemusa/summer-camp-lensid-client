@@ -6,17 +6,12 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import "./PopularInstructors.css"
-import {useEffect, useRef, useState} from "react";
+import {useRef} from "react";
+import useInstructor from "../../../hooks/useInstructor";
 
 
 const PopularInstructors = () => {
-    const [instructors, setInstructors] = useState([]);
-
-    useEffect(() => {
-        fetch('instructors.json')
-            .then(res => res.json())
-            .then(data => setInstructors(data))
-    }, [])
+    const [instructors] = useInstructor();
 
     const progressCircle = useRef(null);
     const progressContent = useRef(null);
@@ -55,7 +50,8 @@ const PopularInstructors = () => {
                             </div>
                             <div>
                                 <p className="text-3xl font-bold">{instructor.instructor_name}</p>
-                                <p className="text-lg font-semibold font-serif text-blue-800"> Number of Classes: {instructor.number_classes}</p>
+                                <p className="text-lg font-semibold font-serif text-blue-800"> Number of Classes: {instructor.total_classes}</p>
+                                <p className="text-lg font-semibold font-serif text-blue-800"> Enrolled Students: {instructor.enrolled_students}</p>
                             </div>
                         </div>
 

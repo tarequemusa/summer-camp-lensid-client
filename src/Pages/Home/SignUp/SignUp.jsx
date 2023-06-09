@@ -11,7 +11,7 @@ const SignUp = () => {
                     SIGN UP NOW!</h2>
                 <Link to="signup"><button className="btn btn-outline btn-success px-8 py-8 content-center text-3xl font-semibold">Sign Up</button></Link>
             </div>
-            <div className="w-[75%] lg:w-[25%] outline rounded-full bg-green-300">
+            <div className="w-[100%] md:w-[25%] lg:w-[25%] shadow-2xl rounded-full bg-white">
                 <Lottie animationData={studio} loop={true} />
             </div>
         </div>
