@@ -12,7 +12,7 @@ const Categories = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 p-10 mx-auto">
                 <div className="card w-full">
                     <div className="card-body">
-                        <figure><img className="w-2/5 rounded-full" src="https://startertemplatecloud.com/g34/wp-content/uploads/sites/58/2022/01/pexels-vlada-karpovich-4609072.jpg" alt="car!" /></figure>
+                        <figure><img className="w-[50%] outline outline-gray-300 rounded-2xl" src="https://startertemplatecloud.com/g34/wp-content/uploads/sites/58/2022/01/pexels-vlada-karpovich-4609072.jpg" alt="car!" /></figure>
                         <div className="card-actions flex items-center justify-center">
                             <button className="btn btn-outline btn-primary flex items-center px-12 py-12 content-around">
                                 <div className="outline rounded-full p-2">
@@ -32,7 +32,7 @@ const Categories = () => {
                 </div>
                 <div className="card w-full">
                     <div className="card-body">
-                        <figure><img className="w-2/5 rounded-full" src="https://startertemplatecloud.com/g34/wp-content/uploads/sites/58/2022/01/retouching.jpg" alt="car!" /></figure>
+                        <figure><img className="w-[50%] outline outline-gray-300 rounded-2xl" src="https://startertemplatecloud.com/g34/wp-content/uploads/sites/58/2022/01/retouching.jpg" alt="car!" /></figure>
                         <div className="card-actions flex items-center justify-center">
                             <button className="btn btn-outline btn-secondary flex items-center px-12 py-12 content-around">
                                 <div className="outline rounded-full p-2">
@@ -52,7 +52,7 @@ const Categories = () => {
                 </div>
                 <div className="card w-full">
                     <div className="card-body">
-                        <figure><img className="w-2/5 rounded-full" src="https://startertemplatecloud.com/g34/wp-content/uploads/sites/58/2022/01/mobile.jpg" alt="car!" /></figure>
+                        <figure><img className="w-[50%] outline outline-gray-300 rounded-2xl" src="https://startertemplatecloud.com/g34/wp-content/uploads/sites/58/2022/01/mobile.jpg" alt="car!" /></figure>
                         <div className="card-actions flex items-center justify-center">
                             <button className="btn btn-outline btn-info px-12 py-12 content-around">
                                 <div className="outline rounded-full p-2">

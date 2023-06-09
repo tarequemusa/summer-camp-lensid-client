@@ -44,7 +44,7 @@ const Footer = () => {
                 </div>
             </footer>
             <footer className="footer px-10 py-4 border-t bg-sky-500 text-base-content border-base-300">
-                <div className="items-center grid-flow-col">
+                <div className="items-center justify-start grid-flow-col">
                     <div>Copyright &copy; {new Date().getFullYear()} - All right reserved by Lens ID.
                     </div>
                 </div>
