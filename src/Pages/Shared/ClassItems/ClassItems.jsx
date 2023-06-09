@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 
 const ClassItems = ({item}) => {
     const {course_name, image_link, course_fee, course_intro, duration, seats_available} = item;
-    console.log(item);
     return (
         <div className="flex flex-col md:flex-row lg:flex-row space-x-4 mx-auto px-10 md:px-10 lg:px-10">
             <img className="w-[100%] md:w-[50%] lg:w-[50%]" src={image_link} alt="" />
