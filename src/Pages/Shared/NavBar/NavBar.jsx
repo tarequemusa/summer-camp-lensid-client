@@ -25,8 +25,8 @@ const NavBar = () => {
                         </ul>
                     </div>
                     <div>
-                        <Link to="/"><img className='w-2/5' src={NavLogo} alt="" /></Link>
-                        <p className='text-green-950'><small>An Institute of Photography</small></p>
+                        <Link to="/"><img className='w-[100%] md:w-[50%] lg:w-[55%]' src={NavLogo} alt="" /></Link>
+                        <p className='text-green-950 hidden md:visible lg:collapse'><small>An Institute of Photography</small></p>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">

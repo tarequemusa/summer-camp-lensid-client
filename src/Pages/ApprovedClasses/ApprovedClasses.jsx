@@ -1,6 +1,5 @@
 import {Helmet} from "react-helmet-async";
 import useClass from "../../hooks/useClass";
-import ClassCategory from "../ClassCategory/ClassCategory";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import {Link} from "react-router-dom";
 
@@ -41,13 +40,6 @@ const ApprovedClasses = () => {
                             </div>)
                     }
                 </div>
-                {/* <div><ClassCategory items={Family_Photography}></ClassCategory></div>
-                <div className="my-10">
-                    <ClassCategory items={Mobile_Photography}></ClassCategory>
-                </div>
-                <div>
-                    <ClassCategory items={Photo_Editing}></ClassCategory>
-                </div> */}
             </div>
         </div>
     );
