@@ -67,11 +67,11 @@ const Login = () => {
                 <title>Login | LensID An Institute of Photography</title>
             </Helmet>
             <>
-                <div className="text-center mt-12 font-bold px-10 divider">
-                    <h1 className="text-4xl font-bold">Login now!</h1>
-                </div>
-                <div className="hero min-h-screen bg-base-200">
-                    <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 content-around gap-12'>
+                <div className="hero bg-[url('https://i.ibb.co/tMdqH6s/water.png')] bg-cover min-h-screen bg-base-200">
+                    <div className="text-center mt-12 font-bold px-10 divider">
+                        <h1 className="text-4xl font-bold">Sign in To Continue Access !</h1>
+                    </div>
+                    <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 content-around gap-12 mt-24'>
                         <div className='w-[100%] px-10'>
                             <Lottie animationData={loginAnimation} loop={true} />
                         </div>
@@ -97,14 +97,14 @@ const Login = () => {
                                 <div>
                                     <div>
                                         <div className='my-3'>
-                                            <h5 className='text-center fw-bold divider'>OR</h5>
+                                            <h5 className='text-center fw-bold divider'>OR sign in with</h5>
                                         </div>
                                     </div>
                                     <div className="flex flex-col justify-center items-center">
-                                        <button className='mx-2 px-4 text-center rounded-full bg-sky-700 text-white text-light p-3' onClick={handleGoogleSignIn}> <FaGoogle /></button>
+                                        <button className='mx-2 text-center rounded-full bg-sky-700 text-white text-xl px-4 py-4' onClick={handleGoogleSignIn}> <FaGoogle /></button>
                                     </div>
                                 </div>
-                                <p className="text-center text-2xl my-5"><small>New to Here? Please <Link to="/register"><span className="text-sky-700 font-bold py-20">Register !</span></Link> </small></p>
+                                <p className="text-center text-xl my-5"><small>New to Here? Please <Link to="/signup"><span className="text-sky-700 font-bold py-20">Register !</span></Link> </small></p>
                                 {/* <p className="text-red-700">{error}</p>
                             <p className="text-green-700">{success}</p> */}
                                 {/* <SocialLogin></SocialLogin> */}

@@ -7,6 +7,7 @@ import Error from "../Components/Error/Error";
 import ApprovedClasses from "../Pages/ApprovedClasses/ApprovedClasses";
 import AllInstructor from "../Pages/AllInstructor/AllInstructor";
 import Login from "../Pages/Login/Login";
+import UserSignUp from "../Pages/UserSignUp/UserSignUp";
 
 
 export const router = createBrowserRouter([
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
             {
                 path: 'login',
                 element: <Login></Login>
+            },
+            {
+                path: 'signup',
+                element: <UserSignUp></UserSignUp>
             }
         ]
     },
