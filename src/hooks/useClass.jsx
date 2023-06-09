@@ -5,7 +5,7 @@ const useClass = () => {
     const [allClass, setAllClass] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('/public/Classes.json')
+        fetch('http://localhost:5000/class')
             .then(res => res.json())
             .then(data => {
                 setAllClass(data);

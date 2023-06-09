@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 const PopularClasses = () => {
     const [allClass] = useClass();
-    const popularItems = allClass.filter(item => item.category === 'Family Photography')
+    // const popularItems = allClass.filter(item => item.category === 'Family Photography')
 
     return (
         <section className='mb-12'>
@@ -17,8 +17,8 @@ const PopularClasses = () => {
             ></SectionTitle>
             <div className='grid md:grid-cols-2 gap-10 px-10'>
                 {
-                    popularItems.slice(0, 6).map(item => <ClassItems
-                        key={item._id}
+                    allClass.slice(0, 6).map(item => <ClassItems
+                        key={allClass._id}
                         item={item}
                     ></ClassItems>)
                 }
