@@ -46,26 +46,15 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className='navbar-end'>
-                    {/* <div className="navbar-end grid sm:grid-flow-col md:grid-flow-col items-center gap-2">
-                        {
-                            user &&
-                            <div className='text-center px-3 py-0'><img className='rounded-full w-3/5' title={user.displayName} src={user.photoURL} alt="" /></div>
-                        }
-                        {
-                            user ? <>
-                                <span>{user.email}</span> <Link to='/'><button onClick={handleLogOut} className='btn btn-sm'> Log Out</button></Link> </> : <button className='px-2 btn btn-sm'><Link to='/login'>Login</Link></button>
-
-                        }
-                    </div> */}
                     <div className="dropdown dropdown-end flex items-center gap-3 justify-end">
                         {user && <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-20 rounded-full" title={user.displayName}>
+                            <div className="w-20 outline outline-gray-400 rounded-full" title={user.displayName}>
                                 <img src={user.photoURL} />
                             </div>
                         </label>}
                         {
                             user ? <>
-                                <Link to='/'><button onClick={handleLogOut} className='btn btn-sm btn-secondary btn-outline rounded-full'> Log Out</button></Link> </> : <button className='px-4 btn btn-outline btn-primary rounded-xl'><Link to='/login'>Login</Link></button>
+                                <Link to='/'><button onClick={handleLogOut} className='btn btn-sm btn-secondary btn-outline rounded-full'> Log Out</button></Link> </> : <button className='px-8 btn btn-outline btn-primary rounded-xl'><Link to='/login'>Login</Link></button>
 
                         }
                     </div>

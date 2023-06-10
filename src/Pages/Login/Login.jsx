@@ -69,7 +69,7 @@ const Login = () => {
             <>
                 <div className="hero bg-[url('https://i.ibb.co/tMdqH6s/water.png')] bg-cover min-h-screen bg-base-200">
                     <div className="text-center mt-12 font-bold px-10 divider">
-                        <h1 className="text-4xl font-bold">Sign in To Continue Access !</h1>
+                        <h1 className="text-4xl font-bold mx-auto">Login Now !</h1>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 content-around gap-12 mt-24'>
                         <div className='w-[100%] px-10'>
