@@ -18,7 +18,7 @@ const ApprovedClasses = () => {
     const handleAddToCart = singleClass => {
         console.log(user);
         if(user && user.email) {
-            const cartCourse = {selectId: singleClass._id, image: singleClass.image_link, title: singleClass.course_name, fee: singleClass.course_fee, seats: singleClass.seats_available, duration: singleClass.duration}
+            const cartCourse = {selectId: singleClass._id, image: singleClass.image_link, title: singleClass.course_name, fee: singleClass.course_fee, seats: singleClass.seats_available, duration: singleClass.duration, email: user.email}
             fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
