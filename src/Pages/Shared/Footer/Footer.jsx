@@ -1,24 +1,48 @@
 import {Link} from 'react-router-dom';
 import footerLogo from '../../../assets/lensid-main-logo.png'
+import Swal from 'sweetalert2';
+
+
+const handleLogin = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    console.log(email);
+    Swal.fire({
+        title: 'Your Subscription Successful',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    });
+    form.reset();
+}
 
 const Footer = () => {
     return (
         <div>
             <div className='flex lg:flex-row flex-col justify-between items-center p-10 bg-sky-300'>
-                <div className='text-xl my-4 font-bold uppercase'>Subscribe to our Newsletter</div>
-                <div className="form-control w-80">
-                    <div className="relative">
-                        <input type="text" placeholder="Enter your email address" className="input input-bordered w-full pr-16" />
-                        <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                <div>
+                    <div className='text-xl my-4 font-bold uppercase'>
+                        Subscribe to our Newsletter
                     </div>
+                    <p className='my-5'>To Get Exclusive Discount, Free Tips and News.</p>
                 </div>
+                <form onSubmit={handleLogin} className="form-control w-80">
+                    <div className="relative form-control">
+                        <input type="email" name='email' placeholder="Enter your email address" className="input input-bordered w-full pr-16" required />
+                        <button type="submit" className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                    </div>
+                </form>
             </div>
             <footer className="footer p-10 bg-sky-400 text-base-content">
                 <div>
-                    <div className='bg-opacity-60 outline rounded-2xl bg-white'>
-                        <Link to='/'><img className='p-2 w-3/4' src={footerLogo} alt="" /></Link>
+                    <div>
+                        <Link to='/'><img className='p-2 w-2/4 outline rounded-2xl bg-white bg-opacity-40' src={footerLogo} alt="" /></Link>
                     </div>
-                    <h3 className="text-xl"><Link to="/"><span className='font-bold'>Lens ID</span></Link><br />Lens ID Institute of Photography since 2020</h3>
+                    <h3 className="text-lg"><Link to="/"><span className='font-bold'>LensID</span></Link><br />An Institute of Photography since 2020</h3>
                 </div>
                 <div>
                     <span className="text-xl footer-title">Mailing Address</span>

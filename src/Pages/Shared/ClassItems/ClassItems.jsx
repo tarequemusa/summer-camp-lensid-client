@@ -15,7 +15,6 @@ const ClassItems = ({item}) => {
                         <p className="text-green-700 font-semibold py-1">Duration: {duration}</p>
                         <p className="text-green-700 font-semibold">No. of Seats: {seats_available}</p>
                     </div>
-                    <Link to="/"><button className="btn btn-info btn-sm">Select Course</button></Link>
                 </div>
             </div>
         </div>

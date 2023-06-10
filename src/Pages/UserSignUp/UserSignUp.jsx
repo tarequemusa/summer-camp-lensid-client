@@ -23,7 +23,7 @@ const UserSignUp = () => {
 
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = {name: data.name, email: data.email}
+                        const saveUser = {name: data.name, email: data.email, photo: data.photoURL}
                         fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {
@@ -38,7 +38,7 @@ const UserSignUp = () => {
                                     Swal.fire({
                                         position: 'top-end',
                                         icon: 'success',
-                                        title: 'User created successfully.',
+                                        title: 'User Created Successfully.',
                                         showConfirmButton: false,
                                         timer: 1500
                                     });
@@ -52,78 +52,6 @@ const UserSignUp = () => {
                     .catch(error => console.log(error))
             })
     };
-
-    // const {user, createUser} = useContext(AuthContext);
-    // console.log(createUser);
-
-    // // const [error, setError] = useState('');
-    // // const [success, setSuccess] = useState('');
-
-    // const handleRegister = event => {
-    //     event.preventDefault();
-    //     // setSuccess('');
-    //     // setError('');
-    //     const form = event.target;
-    //     const email = event.target.email.value;
-    //     const password = event.target.password.value;
-    //     const confirm_password = event.target.confirm_password.value;
-    //     const name = event.target.name.value;
-    //     const photo = event.target.photo.value;
-    //     console.log(name, email, password, confirm_password, photo);
-    //     event.target.reset();
-    //     // // Password Validate:
-    //     // if(!/(?=.*[A-Z])/.test(password)) {
-    //     //     setError('Please add atleast one uppercase');
-    //     //     return;
-    //     // }
-    //     // else if(!/(?=.*[0-9].*[0-9])/.test(password)) {
-    //     //     setError('Please add atleast two numbers');
-    //     //     return;
-    //     // }
-    //     // else if(password.length < 6) {
-    //     //     setError('Please add atleast 6 characters in your password');
-    //     //     return;
-    //     // }
-
-    //     // Create user in Firebase
-    //     createUser(email, password)
-    //         .then(result => {
-    //             const loggedUser = result.user;
-    //             console.log(loggedUser);
-    //             if(loggedUser) {
-    //                 // setError('');
-    //                 form.reset();
-    //                 Swal.fire({
-    //                     title: 'User Created Successful',
-    //                     showClass: {
-    //                         popup: 'animate__animated animate__fadeInDown'
-    //                     },
-    //                     hideClass: {
-    //                         popup: 'animate__animated animate__fadeOutUp'
-    //                     }
-    //                 });
-    //                 updateUserData(result.user, name);
-    //             }
-    //         })
-    //         .catch(error => {
-    //             console.log(error.message);
-    //             // setError(error.message);
-
-    //         })
-    // }
-
-
-    // const updateUserData = (user, name) => {
-    //     updateProfile(user, {
-    //         displayName: name
-    //     })
-    //         .then(() => {
-    //             console.log('user name updated');
-    //         })
-    //         .catch(error => {
-    //             // setError(error.message);
-    //         })
-    // }
 
 
     return (

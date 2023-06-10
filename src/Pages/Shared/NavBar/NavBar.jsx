@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom';
 import NavLogo from '../../../assets/lensid-main-logo.png'
 import {useContext} from 'react';
 import {AuthContext} from '../../../providers/AuthProvider';
+import {FaShoppingCart} from 'react-icons/fa';
 
 
 const NavBar = () => {
@@ -20,7 +21,7 @@ const NavBar = () => {
             <li className='text-green-800 text-lg'><Link to="allinstructors">Instructor</Link></li>
             <li className='text-green-800 text-lg'><Link to="approvedclasses">Classes</Link></li>
             <li className='text-green-800 text-lg'><Link to="/">Blogs</Link></li>
-            <li className='text-green-800 text-lg'><Link to="login">Login</Link></li>
+            <li className='text-green-800 text-lg'><Link to="/secret">Dashboard</Link></li>
         </>
 
     return (
@@ -46,10 +47,16 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className='navbar-end'>
+                    <Link>
+                        <button className="btn btn-active btn-ghost">
+                            <FaShoppingCart />
+                            <div className="badge badge-secondary">+0</div>
+                        </button> &nbsp;
+                    </Link>
                     <div className="dropdown dropdown-end flex items-center gap-3 justify-end">
                         {user && <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-20 outline outline-gray-400 rounded-full" title={user.displayName}>
-                                <img src={user.photoURL} />
+                            <div className="w-20 outline outline-gray-400 rounded-full" title={user?.displayName}>
+                                <img src={user?.photoURL} />
                             </div>
                         </label>}
                         {

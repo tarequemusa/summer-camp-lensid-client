@@ -4,11 +4,10 @@ import {Helmet} from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import Lottie from "lottie-react";
 import loginAnimation from "../../../public/login-verification.json";
-import {FaGoogle} from "react-icons/fa";
+import {FaGoogle, FaLock} from "react-icons/fa";
 import {AuthContext} from '../../providers/AuthProvider';
 import {GoogleAuthProvider, getAuth, signInWithPopup} from 'firebase/auth';
 import {app} from '../../firebase/firebase.config';
-// import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const auth = getAuth(app);
@@ -43,7 +42,7 @@ const Login = () => {
                         popup: 'animate__animated animate__fadeOutUp'
                     }
                 });
-                Navigate(from, {replace: true});
+                navigate(from, {replace: true});
             })
         form.reset();
     }
@@ -68,8 +67,8 @@ const Login = () => {
             </Helmet>
             <>
                 <div className="hero bg-[url('https://i.ibb.co/tMdqH6s/water.png')] bg-cover min-h-screen bg-base-200">
-                    <div className="text-center mt-12 font-bold px-10 divider">
-                        <h1 className="text-4xl font-bold mx-auto">Login Now !</h1>
+                    <div className="text-center mt-12 font-bold px-10 divider items-center">
+                        <h1 className="flex flex-row text-4xl font-bold mx-auto"><span className='text-red-600 outline rounded-full p-2'><FaLock /></span>&nbsp; Login Now ! </h1>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 content-around gap-12 mt-24'>
                         <div className='w-[100%] px-10'>
@@ -105,9 +104,6 @@ const Login = () => {
                                     </div>
                                 </div>
                                 <p className="text-center text-xl my-5"><small>New to Here? Please <Link to="/signup"><span className="text-sky-700 font-bold py-20">Register !</span></Link> </small></p>
-                                {/* <p className="text-red-700">{error}</p>
-                            <p className="text-green-700">{success}</p> */}
-                                {/* <SocialLogin></SocialLogin> */}
                             </div>
                         </div>
                     </div>

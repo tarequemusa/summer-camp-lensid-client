@@ -1,14 +1,51 @@
 import {Helmet} from "react-helmet-async";
 import useClass from "../../hooks/useClass";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
-import {Link} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
+import {useContext} from "react";
+import {AuthContext} from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const ApprovedClasses = () => {
     const [allClass] = useClass();
-    // const Family_Photography = allClass.filter(item => item.category === 'Family Photography');
-    // const Mobile_Photography = allClass.filter(item => item.category === 'Mobile Photography');
-    // const Photo_Editing = allClass.filter(item => item.category === 'Photo Editing');
+    const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+
+    const handleAddToCart = singleClass => {
+        console.log(singleClass);
+        if(user) {
+            fetch('http://localhost:5000/carts')
+                .then(res => res.json())
+                .then(data => {
+                    if(data.insertedId) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Your work has been saved',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
+        }
+        else {
+            Swal.fire({
+                title: 'Please login to select the Course?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login Now!'
+            }).then((result) => {
+                if(result.isConfirmed) {
+                    navigate('/login', {state: {from: location}})
+                }
+            })
+        }
+    }
     return (
         <div>
             <Helmet>
@@ -34,7 +71,7 @@ const ApprovedClasses = () => {
                                             <p className="text-green-700 font-semibold py-1">Duration: {singleClass.duration}</p>
                                             <p className="text-green-700 font-semibold">No. of Seats: {singleClass.seats_available}</p>
                                         </div>
-                                        <Link to="/"><button className="btn btn-info btn-sm">Select Course</button></Link>
+                                        <Link><button onClick={() => handleAddToCart(singleClass)} className="btn btn-info btn-sm">Select Course</button></Link>
                                     </div>
                                 </div>
                             </div>)
