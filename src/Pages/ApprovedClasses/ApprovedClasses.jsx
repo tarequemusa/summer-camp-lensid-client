@@ -5,26 +5,35 @@ import {Link, useLocation, useNavigate} from "react-router-dom";
 import {useContext} from "react";
 import {AuthContext} from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import useCarts from "../../hooks/useCarts";
 
 
 const ApprovedClasses = () => {
     const [allClass] = useClass();
     const {user} = useContext(AuthContext);
+    const [, refetch] = useCarts();
     const navigate = useNavigate();
     const location = useLocation();
 
-
     const handleAddToCart = singleClass => {
-        console.log(singleClass);
-        if(user) {
-            fetch('http://localhost:5000/carts')
+        console.log(user);
+        if(user && user.email) {
+            const cartCourse = {selectId: singleClass._id, image: singleClass.image_link, title: singleClass.course_name, fee: singleClass.course_fee, seats: singleClass.seats_available, duration: singleClass.duration}
+            fetch('http://localhost:5000/carts', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(cartCourse)
+            })
                 .then(res => res.json())
                 .then(data => {
                     if(data.insertedId) {
+                        refetch();
                         Swal.fire({
-                            position: 'top-end',
+                            position: 'center',
                             icon: 'success',
-                            title: 'Your work has been saved',
+                            title: 'Course Selected',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -46,6 +55,8 @@ const ApprovedClasses = () => {
             })
         }
     }
+
+
     return (
         <div>
             <Helmet>

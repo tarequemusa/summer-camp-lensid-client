@@ -12,7 +12,7 @@ import {app} from '../../firebase/firebase.config';
 const Login = () => {
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
-    const {signIn} = useContext(AuthContext);
+    const {signIn, googleProviderLogin} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -48,7 +48,7 @@ const Login = () => {
     }
 
     const handleGoogleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
+        googleProviderLogin(googleProvider)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);

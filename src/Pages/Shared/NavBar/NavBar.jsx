@@ -3,11 +3,12 @@ import NavLogo from '../../../assets/lensid-main-logo.png'
 import {useContext} from 'react';
 import {AuthContext} from '../../../providers/AuthProvider';
 import {FaShoppingCart} from 'react-icons/fa';
+import useCarts from '../../../hooks/useCarts';
 
 
 const NavBar = () => {
     const {user, logOut} = useContext(AuthContext);
-
+    const [cart] = useCarts();
     const handleLogOut = (event) => {
         event.preventDefault();
         logOut()
@@ -47,10 +48,10 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className='navbar-end'>
-                    <Link>
+                    <Link to="/dashboard/mycart">
                         <button className="btn btn-active btn-ghost">
                             <FaShoppingCart />
-                            <div className="badge badge-secondary">+0</div>
+                            <div className="badge badge-secondary">+{cart?.length || 0}</div>
                         </button> &nbsp;
                     </Link>
                     <div className="dropdown dropdown-end flex items-center gap-3 justify-end">

@@ -6,7 +6,6 @@ import {Link} from "react-router-dom";
 
 const PopularClasses = () => {
     const [allClass] = useClass();
-    // const popularItems = allClass.filter(item => item.category === 'Family Photography')
 
     return (
         <section className='mb-12'>
