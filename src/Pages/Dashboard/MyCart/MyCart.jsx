@@ -1,35 +1,66 @@
 import {Helmet} from "react-helmet-async";
 import useCarts from "../../../hooks/useCarts";
 import {FaTrash} from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const MyCart = () => {
-    const [cart] = useCarts();
+    const [cart, refetch] = useCarts();
     console.log(cart);
     const total = cart.reduce((sum, item) => item.fee + sum, 0);
+
+    const handleDelete = item => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if(result.isConfirmed) {
+                fetch(`http://localhost:5000/carts/${ item._id }`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if(data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Selected Course has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+    }
+
     return (
-        <div>
+        <div className="w-full p-10 mx-auto">
             <Helmet>
                 <title>My Selected Class | LensID An Institute of Photography</title>
             </Helmet>
-            <div className="flex items-center justify-evenly uppercase font-bold">
+            <div className="flex flex-col md:flex-col lg:flex-row items-center justify-evenly uppercase font-bold mb-12">
                 <h2 className="text-3xl">Total Order: {cart.length},</h2> &nbsp;
                 <h2 className="text-3xl">Total Price:$ {total.toFixed(2)},</h2>&nbsp;
                 <button className="btn btn-primary">Pay</button>
             </div>
-            <div className="overflow-x-auto">
-                <table className="table">
+            <div className="overflow-hidden">
+                <table className="table ">
                     {/* head */}
-                    <thead>
+                    <thead className="bg-sky-200 text-center">
                         <tr>
                             <th>Sl.</th>
                             <th>Photo & Title</th>
                             <th>Course Fee</th>
-                            <th>Action</th>
                             <th>Pay</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="text-center">
                         {
                             cart.map((item, index) =>
 
@@ -53,10 +84,10 @@ const MyCart = () => {
                                     <td>
                                         {item.fee}
                                     </td>
-                                    <td className="text-lg text-red-500"><FaTrash /></td>
                                     <td>
-                                        <button className="btn btn-ghost btn-xs">Pay</button>
+                                        <button className="btn btn-ghost btn-md text-green-600">Pay</button>
                                     </td>
+                                    <td className="text-lg text-red-500"><button onClick={() => handleDelete(item)} className="btn btn-ghost"><FaTrash /></button></td>
                                 </tr>
                             )
                         }
