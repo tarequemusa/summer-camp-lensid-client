@@ -5,6 +5,7 @@ import {Link, Navigate, useNavigate} from "react-router-dom";
 import {Helmet} from "react-helmet-async";
 import Swal from "sweetalert2";
 import {useForm} from "react-hook-form";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const UserSignUp = () => {
