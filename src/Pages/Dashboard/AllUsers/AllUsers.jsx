@@ -1,6 +1,8 @@
 import {useQuery} from "@tanstack/react-query";
+import {useState} from "react";
 import {Helmet} from "react-helmet-async";
-import {FaChalkboardTeacher, FaTrash, FaTrashAlt, FaUserPlus, FaUserShield} from "react-icons/fa";
+import {FaChalkboardTeacher, FaTrash, FaUserShield} from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const AllUsers = () => {
@@ -10,15 +12,72 @@ const AllUsers = () => {
             return res.json();
         })
 
-    const handleMakeInstructor = id => {
+    const handleMakeInstructor = user => {
+        fetch(`http://localhost:5000/users/instructor/${ user }`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if(data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: `This user is an Instructor Now`,
+                        showConfirmButton: false,
+                        background: '#EAECEE',
+                        timer: 1500
+                    })
+                }
+            })
 
     }
-    const handleMakeAdmin = id => {
-
+    const handleMakeAdmin = user => {
+        fetch(`http://localhost:5000/users/admin/${ user._id }`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if(data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: `${ user.name } is an Admin Now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
     }
 
-    const handleDelete = user => {
-
+    const handleDelete = item => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if(result.isConfirmed) {
+                fetch(`http://localhost:5000/users/${ item._id }`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if(data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'User has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
     }
 
 
@@ -70,9 +129,9 @@ const AllUsers = () => {
                                     <td>
                                         {user.email}
                                     </td>
-                                    <td><button onClick={() => handleMakeInstructor(user._id)} className="btn btn-ghost btn-lg" title="Instructor">{user.role === 'instructor' ? 'instructor' : <FaChalkboardTeacher />}</button></td>
+                                    <td><button onClick={() => handleMakeInstructor(user._id)} className="btn btn-ghost btn-md text-sky-600" title="Instructor">{user.role === 'instructor' ? 'instructor' : <FaChalkboardTeacher />}</button></td>
                                     <td>
-                                        <button onClick={() => handleMakeAdmin(user._id)} className="btn btn-ghost btn-lg" title="Admin">{user.role === 'admin' ? 'admin' : <FaUserShield />}</button>
+                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost btn-md" title="Admin">{user.role === 'admin' ? 'admin' : <FaUserShield />}</button>
                                     </td>
                                     <td className="text-lg text-red-500"><button onClick={() => handleDelete(user)} className="btn btn-ghost"><FaTrash /></button></td>
                                 </tr>
