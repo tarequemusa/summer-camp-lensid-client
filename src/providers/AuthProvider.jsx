@@ -1,6 +1,7 @@
 import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from "firebase/auth";
 import {createContext, useEffect, useState} from "react";
 import {app} from "../firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -40,6 +41,19 @@ const AuthProviders = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, signedUser => {
             console.log('Logged in User inside auth state observer', signedUser);
             setUser(signedUser);
+
+            // get and set token
+            if(signedUser) {
+                axios.post('http://localhost:5000/jwt', {email: signedUser.email})
+                    .then(data => {
+                        console.log(data.data.token)
+                        localStorage.setItem('access-token', data.data.token)
+                    })
+            }
+            else {
+                localStorage.removeItem('access-token')
+            }
+
             setLoading(false);
         })
         return () => {
