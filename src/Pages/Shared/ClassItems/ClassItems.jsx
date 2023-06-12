@@ -1,9 +1,9 @@
 
 const ClassItems = ({item}) => {
-    const {course_name, image_link, course_fee, course_intro, duration, seats_available} = item;
+    const {course_name, image, course_fee, course_intro, duration, seats_available} = item;
     return (
         <div className="flex flex-col md:flex-row lg:flex-row space-x-4 mx-auto px-10 md:px-10 lg:px-10">
-            <img className="w-[100%] md:w-[50%] lg:w-[50%]" src={image_link} alt="" />
+            <img className="w-[100%] md:w-[50%] lg:w-[50%]" src={image} alt="" />
             <div className="border-t-2 border-r-2 border-b-2 border-gray-300 p-4">
                 <h3 className="uppercase font-bold">{course_name}</h3>
                 <p className="py-2">{course_intro}</p>

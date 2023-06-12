@@ -18,7 +18,7 @@ const ApprovedClasses = () => {
     const handleAddToCart = singleClass => {
         console.log(user);
         if(user && user.email) {
-            const cartCourse = {selectId: singleClass._id, image: singleClass.image_link, title: singleClass.course_name, fee: singleClass.course_fee, seats: singleClass.seats_available, duration: singleClass.duration, email: user.email}
+            const cartCourse = {selectId: singleClass._id, image: singleClass.image, title: singleClass.course_name, fee: singleClass.course_fee, seats: singleClass.seats_available, duration: singleClass.duration, email: user.email}
             fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
@@ -72,7 +72,7 @@ const ApprovedClasses = () => {
                     {
                         allClass.map((singleClass, index) =>
                             <div key={index} className="flex flex-col md:flex-row lg:flex-row space-x-4 mx-auto lg:px-10">
-                                <img className="w-[100%] md:w-[50%] lg:w-[50%] outline outline-gray-300" src={singleClass.image_link} alt="" />
+                                <img className="w-[100%] md:w-[50%] lg:w-[50%] outline outline-gray-300" src={singleClass.image} alt="" />
                                 <div className="border-t-2 border-r-2 border-b-2 border-gray-300 p-4">
                                     <h3 className="uppercase font-bold">{singleClass.course_name}</h3>
                                     <p className="py-2">{singleClass.course_intro}</p>

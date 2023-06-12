@@ -3,15 +3,24 @@ import SectionTitle from "../../../../Components/SectionTitle/SectionTitle";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import {useForm} from "react-hook-form";
+import React, {useContext} from "react";
+import {AuthContext} from "../../../../providers/AuthProvider";
 
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 
 
 const AddClass = () => {
-
+    const {user} = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure();
-    const {register, handleSubmit, reset} = useForm();
+    const {register, handleSubmit, reset, setValue} = useForm(
+        {
+            defaultValues: {
+                email: user.email,
+                displayName: user.displayName,
+            }
+        }
+    );
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${ img_hosting_token }`
     const onSubmit = data => {
         const formData = new FormData();
@@ -24,19 +33,19 @@ const AddClass = () => {
             .then(res => res.json())
             .then(imgResponse => {
                 if(imgResponse.success) {
-                    const imgURL = imgResponse.data.display_url;
-                    const {name, price, category, recipe} = data;
-                    const newItem = {name, price: parseFloat(price), category, recipe, image: imgURL}
+                    const image = imgResponse.data.display_url;
+                    const {course_name, course_fee, category, email, instructor, seats, course_intro, student_capacity, duration} = data;
+                    const newItem = {course_name, course_fee: parseFloat(course_fee), category, email, instructor, seats, image: image, course_intro, student_capacity, duration}
                     console.log(newItem);
-                    axiosSecure.post('/menu', newItem)
+                    axiosSecure.post('/class', newItem)
                         .then(data => {
                             console.log('After posting new menu item', data.data);
                             if(data.data.insertedId) {
                                 reset();
                                 Swal.fire({
-                                    position: 'top-end',
+                                    position: 'center',
                                     icon: 'success',
-                                    title: 'Item added successfully',
+                                    title: 'Class Added Successfully',
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
@@ -46,6 +55,10 @@ const AddClass = () => {
             })
     };
 
+    React.useEffect(() => {
+        setValue('status', 'pending');
+    }, [setValue]);
+    console.log(img_hosting_token);
     return (
         <div className="w-full px-10">
             <div>
@@ -60,49 +73,83 @@ const AddClass = () => {
                 </div>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-control w-full ">
-                    <label className="label">
-                        <span className="label-text font-semibold">Recipe Name*</span>
-                    </label>
-                    <input type="text" placeholder="Recipe Name"
-                        {...register("name", {required: true, maxLength: 120})}
-                        className="input input-bordered w-full " />
-                </div>
                 <div className="flex justify-evenly gap-5">
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text font-semibold">Class Name*</span>
+                        </label>
+                        <input type="text" placeholder="Class Name"
+                            {...register("course_name", {required: true, maxLength: 120})}
+                            className="input input-bordered w-full " />
+                    </div>
                     <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text">Category</span>
                         </label>
-                        <select defaultValue="Pick One" {...register("category", {required: true})} className="select select-bordered">
-                            <option disabled>Pick one</option>
-                            <option>Pizza</option>
-                            <option>Soup</option>
-                            <option>Salad</option>
-                            <option>Dessert</option>
-                            <option>Desi</option>
-                            <option>Drinks</option>
+                        <select defaultValue="Select One" {...register("category", {required: true})} className="select select-bordered">
+                            <option disabled>Select one</option>
+                            <option>Family Photography</option>
+                            <option>Photo Editing</option>
+                            <option>Mobile Photography</option>
                         </select>
+                    </div>
+                </div>
+                <div className="form-control w-full ">
+                    <label className="label">
+                        <span className="label-text">Class Image</span>
+                    </label>
+                    <input type="file" {...register("image", {required: true})} className="file-input file-input-bordered file-input-info w-full" />
+                </div>
+                <div className="flex justify-evenly gap-5">
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text font-semibold">Instructor Name</span>
+                        </label>
+                        <input type="text" {...register('instructor')} readOnly defaultValue={user.displayName} className="input input-bordered w-full " />
+                    </div>
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text font-semibold">Email</span>
+                        </label>
+                        <input type="email" {...register("email", {required: true})} readOnly defaultValue={user?.email} className="input input-bordered w-full " />
+                    </div>
+                </div>
+                <div className="flex justify-evenly gap-5">
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text font-semibold">Student Capacity*</span>
+                        </label>
+                        <input type="number" {...register("student_capacity", {required: true})} placeholder="Student Capacity" className="input input-bordered w-full " />
+                    </div>
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text font-semibold">Duration (Week)*</span>
+                        </label>
+                        <input type="text" {...register("duration", {required: true})} placeholder="Course duration" className="input input-bordered w-full " />
+                    </div>
+                </div>
+                <div className="flex justify-evenly gap-5">
+                    <div className="form-control w-full ">
+                        <label className="label">
+                            <span className="label-text font-semibold">Available Seats*</span>
+                        </label>
+                        <input type="number" {...register("seats", {required: true})} placeholder="Number of Seats" className="input input-bordered w-full " />
                     </div>
                     <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text font-semibold">Price*</span>
                         </label>
-                        <input type="number" {...register("price", {required: true})} placeholder="Type here" className="input input-bordered w-full " />
+                        <input type="number" {...register("course_fee", {required: true})} placeholder="Course Fee" className="input input-bordered w-full " />
                     </div>
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Recipe Details</span>
+                        <span className="label-text">Course Intro</span>
                     </label>
-                    <textarea {...register("recipe", {required: true})} className="textarea textarea-bordered h-24" placeholder="Bio"></textarea>
+                    <textarea {...register("course_intro", {required: true})} className="textarea textarea-bordered h-24" placeholder="Short Intro"></textarea>
                 </div>
-                <div className="form-control w-full ">
-                    <label className="label">
-                        <span className="label-text">Item Image</span>
-                    </label>
-                    <input type="file" {...register("image", {required: true})} className="file-input file-input-bordered w-full " />
-                </div>
-                <button className="btn btn-sm mt-4"><input type="submit" value="Add Item" /></button>
+                <input type="hidden" {...register('status')} value="pending" />
+                <button className="btn btn-sm mt-4 btn-primary mb-12"><input type="submit" value="Create A Class" /></button>
             </form>
         </div >
     );
