@@ -23,7 +23,7 @@ const handleLogin = event => {
 const Footer = () => {
     return (
         <div>
-            <div className='flex lg:flex-row flex-col justify-between items-center p-10 bg-sky-300'>
+            <div className='flex lg:flex-row flex-col justify-between items-center p-10 bg-opacity-75 bg-gray-600'>
                 <div>
                     <div className='text-xl my-4 font-bold uppercase'>
                         Subscribe to our Newsletter
@@ -37,7 +37,7 @@ const Footer = () => {
                     </div>
                 </form>
             </div>
-            <footer className="footer p-10 bg-sky-400 text-base-content">
+            <footer className="footer p-10 bg-sky-400 bg-opacity-70 text-base-content">
                 <div>
                     <div>
                         <Link to='/'><img className='p-2 w-2/4 outline rounded-2xl bg-white bg-opacity-40' src={footerLogo} alt="" /></Link>

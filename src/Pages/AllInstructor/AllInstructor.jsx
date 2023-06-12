@@ -7,9 +7,6 @@ import {Link} from "react-router-dom";
 
 const AllInstructor = () => {
     const [instructors] = useInstructor();
-    // const FamilyPhotography = instructors.filter(item => item.category === 'Family Photography');
-    // const MobilePhotography = instructors.filter(item => item.category === 'Mobile Photography');
-    // const PhotoEditing = instructors.filter(item => item.category === 'Photo Editing');
     return (
         <div>
             <Helmet>

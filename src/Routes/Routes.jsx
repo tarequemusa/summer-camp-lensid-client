@@ -13,6 +13,10 @@ import Secret from "../Pages/Shared/Secret/Secret";
 import Dashboard from "../Layout/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddClass from "../Pages/Dashboard/Instructor/AddClass/AddClass";
+import MyClass from "../Pages/Dashboard/Instructor/MyClass/MyClass";
+import InstructorRoute from "./InstructorRoute";
+import AdminRoute from "./AdminRoute";
 
 
 export const router = createBrowserRouter([
@@ -57,7 +61,15 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'allusers',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            },
+            {
+                path: 'addclass',
+                element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
+            },
+            {
+                path: 'myclass',
+                element: <InstructorRoute><MyClass></MyClass></InstructorRoute>
             }
         ]
     }

@@ -24,10 +24,17 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className="w-full navbar bg-sky-300 px-10">
+            <div className="w-full navbar bg-sky-300 px-10 flex justify-between">
                 <div>
-                    <Link to="/"><img className='w-[100%] md:w-[50%] lg:w-[55%]' src={NavLogo} alt="" /></Link>
+                    <Link to="/"><img className='w-[50%] md:w-[50%] lg:w-[55%]' src={NavLogo} alt="" /></Link>
                     <p className='text-green-950 hidden md:visible lg:collapse'><small>An Institute of Photography</small></p>
+                </div>
+                <div>
+                    {user && <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-20 outline outline-gray-400 rounded-full" title={user?.displayName}>
+                            <img src={user?.photoURL} />
+                        </div>
+                    </label>}
                 </div>
             </div>
             <div className="drawer lg:drawer-open">
@@ -51,9 +58,9 @@ const Dashboard = () => {
                                 isInstructor ?
                                     <>
                                         <h3 className="text-2xl font-bold text-black bg-gray-200 px-2">Instructor Dashboard</h3>
-                                        <li><NavLink to="/"><FaHome />Instructor Home</NavLink></li>
-                                        <li><NavLink to="/"><FaSchool />Add a Class</NavLink></li>
-                                        <li><NavLink to="/"><FaUser />My Class</NavLink></li>
+                                        <li><NavLink to="/dashboard"><FaHome />Instructor Home</NavLink></li>
+                                        <li><NavLink to="/dashboard/addclass"><FaSchool />Add a Class</NavLink></li>
+                                        <li><NavLink to="/dashboard/myclass"><FaUser />My Class</NavLink></li>
                                     </> :
                                     <>
                                         <h3 className="text-2xl font-bold text-black bg-gray-200 px-2">Student Dashboard</h3>
