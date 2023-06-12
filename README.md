@@ -3,25 +3,27 @@
 Assignment No.: 12 (Summer Camp School)
 PH Repository Name: summer-camp-school
 
-Assignment Name: LensID | An Institute of Photography 
+Assignment Name: LensID | An Institute of Photography Since 2020
 Assignment Type: BEST DIGITAL PHOTOGRAPHY COURSES
 
 /**
 *-----------------------------------------
-* Submit Details
+* Submition Details
 *-----------------------------------------
 
 * 1. Private Client Githhub Link: https://github.com/programming-hero-web-course1/b712-summer-camp-client-side-tarequemusa
 
 * 2. Private Server Githhub Link: https://github.com/programming-hero-web-course1/b7a12-summer-camp-server_side-tarequemusa
 
-* 3. Live Website Link: 
+* 3. Live Website Link: https://simple-firebase-1may.web.app/
 
-* 4. Admin Email and Password: 
+* 4. Live Server Link: https://summer-camp-lensid-server.vercel.app
 
-* 5. Instructor Email and Password: 
+* 4. Admin Email and Password: Email: .com, Password: AAaa!!11
 
-* 6. Student Email and Password: 
+* 5. Instructor Email and Password: Email: .com, Password: AAaa!!11
+
+* 6. Student Email and Password: Email: .com, Password: AAaa!!11
 
 * 7. 
 **/
