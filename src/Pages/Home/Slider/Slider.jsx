@@ -1,3 +1,4 @@
+import {Slide, Zoom} from "react-awesome-reveal";
 import {Swiper, SwiperSlide} from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -15,13 +16,15 @@ const Slider = () => {
                 <div className="flex items-center">
                     <div>
                         <div className="mt-5">
-                            <h2 className="text-4xl text-center my-auto font-serif font-bold mx-auto">
+                            <Zoom cascade damping={0.1}><h2 className="text-4xl text-center my-auto font-serif font-bold mx-auto">
                                 BEST DIGITAL PHOTOGRAPHY COURSES FOR YOU
-                            </h2>
+                            </h2></Zoom>
                         </div>
                         <div className="flex justify-center flex-col lg:flex-row mt-10 gap-5 mx-auto">
-                            <button className="btn btn-outline btn-primary px-12 py-12 content-around text-lg">Beginner Level</button>
-                            <button className="btn btn-outline btn-secondary px-12 py-12 content-around text-lg">100% Online</button>
+                            <Slide>
+                                <button className="btn btn-outline btn-primary px-12 py-12 content-around text-lg">Beginner Level</button>
+                                <button className="btn btn-outline btn-secondary px-12 py-12 content-around text-lg">100% Online</button>
+                            </Slide>
                         </div>
                     </div>
 

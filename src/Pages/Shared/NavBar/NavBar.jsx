@@ -28,7 +28,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="navbar bg-sky-200 px-10">
+            <div className="navbar shadow-2xl bg-sky-200 px-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -48,10 +48,10 @@ const NavBar = () => {
                         {navOptions}
                     </ul>
                 </div>
-                <div className='navbar-end'>
+                <div className='navbar-end flex flex-col md:flex-row lg:flex-row gap-2'>
                     <DarkLight />
                     <Link to="/dashboard/mycart">
-                        <button className="btn btn-active btn-ghost">
+                        <button className="btn btn-active btn-sm btn-ghost">
                             <FaShoppingCart />
                             <div className="badge badge-secondary">+{cart?.length || 0}</div>
                         </button> &nbsp;
@@ -64,7 +64,7 @@ const NavBar = () => {
                         </label>}
                         {
                             user ? <>
-                                <Link to='/'><button onClick={handleLogOut} className='btn btn-sm btn-secondary btn-outline rounded-full'> Log Out</button></Link> </> : <button className='px-8 btn btn-outline btn-primary rounded-xl'><Link to='/login'>Login</Link></button>
+                                <Link to='/'><button onClick={handleLogOut} className='btn btn-sm btn-secondary btn-outline rounded-full'> Log Out</button></Link> </> : <button className='px-4 btn btn-outline btn-primary btn-sm rounded-xl'><Link to='/login'>Login</Link></button>
 
                         }
                     </div>
