@@ -1,6 +1,6 @@
 import {FaCamera} from "react-icons/fa";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import {Fade, Roll, Rotate, Slide, Zoom} from "react-awesome-reveal";
+import {Fade, Slide, Zoom} from "react-awesome-reveal";
 
 const Categories = () => {
     return (

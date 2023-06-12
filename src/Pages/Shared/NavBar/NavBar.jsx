@@ -50,7 +50,7 @@ const NavBar = () => {
                 </div>
                 <div className='navbar-end flex flex-col md:flex-row lg:flex-row gap-2'>
                     <DarkLight />
-                    <Link to="/dashboard/mycart">
+                    <Link to="dashboard/mycart">
                         <button className="btn btn-active btn-sm btn-ghost">
                             <FaShoppingCart />
                             <div className="badge badge-secondary">+{cart?.length || 0}</div>
