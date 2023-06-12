@@ -4,6 +4,7 @@ import {useContext} from 'react';
 import {AuthContext} from '../../../providers/AuthProvider';
 import {FaShoppingCart} from 'react-icons/fa';
 import useCarts from '../../../hooks/useCarts';
+import DarkLight from '../../../Components/DarkLight/DarkLight';
 
 
 const NavBar = () => {
@@ -27,7 +28,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="navbar shadow-xl bg-sky-200 px-10">
+            <div className="navbar bg-sky-200 px-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -48,6 +49,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className='navbar-end'>
+                    <DarkLight />
                     <Link to="/dashboard/mycart">
                         <button className="btn btn-active btn-ghost">
                             <FaShoppingCart />

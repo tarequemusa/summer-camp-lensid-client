@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background: none;
+}
+
 .drawer-side a.active {
     color: white;
 }

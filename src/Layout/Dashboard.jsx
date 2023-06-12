@@ -1,13 +1,16 @@
 import {FaCreditCard, FaHome, FaSchool, FaSearchLocation, FaShoppingCart, FaUser, FaUserCircle} from "react-icons/fa";
 import {NavLink, Outlet} from "react-router-dom";
 import useCarts from "../hooks/useCarts";
+import useAdmin from "../hooks/useAdmin";
 
 
 const Dashboard = () => {
     const [cart] = useCarts();
 
-    const isAdmin = true;
+    // const isAdmin = true;
     // const isStudent = true;
+
+    const [isAdmin] = useAdmin();
 
 
 
@@ -48,7 +51,7 @@ const Dashboard = () => {
                     }
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome />Home</NavLink></li>
-                    <li><NavLink to="/"><FaSchool />Classes</NavLink></li>
+                    <li><NavLink to="/approvedclasses"><FaSchool />Classes</NavLink></li>
                     <li><NavLink to="/"><FaUser />Instructors</NavLink></li>
                     <li><NavLink to="/"><FaSearchLocation />Contact</NavLink></li>
                 </ul>

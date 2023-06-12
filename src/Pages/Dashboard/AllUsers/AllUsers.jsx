@@ -1,5 +1,4 @@
 import {useQuery} from "@tanstack/react-query";
-import {useState} from "react";
 import {Helmet} from "react-helmet-async";
 import {FaChalkboardTeacher, FaTrash, FaUserShield} from "react-icons/fa";
 import Swal from "sweetalert2";
