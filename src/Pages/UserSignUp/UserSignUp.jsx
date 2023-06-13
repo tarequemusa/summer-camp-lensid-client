@@ -1,7 +1,6 @@
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {AuthContext} from "../../providers/AuthProvider";
-import {updateProfile} from "firebase/auth";
-import {Link, Navigate, useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Helmet} from "react-helmet-async";
 import Swal from "sweetalert2";
 import {useForm} from "react-hook-form";
@@ -108,6 +107,7 @@ const UserSignUp = () => {
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
+                    <SocialLogin />
                     <p className="text-center text-xl pb-6"><small>Already Have an Account? <br /> Please <Link to="/login"><span className="text-sky-700 font-bold py-20">Login !</span></Link> </small></p>
                 </div>
                 {/* <p className="text-danger text-center">{error}</p>

@@ -29,25 +29,25 @@ const MyClass = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>
+                            <th className="border">
                                 Sl.
                             </th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Enrolled Student</th>
-                            <th>Status</th>
-                            <th>Feedback</th>
+                            <th className="border">Image</th>
+                            <th className="border">Name</th>
+                            <th className="border">Category</th>
+                            <th className="border">Enrolled Student</th>
+                            <th className="border">Status</th>
+                            <th className="border">Feedback</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             addedClass.map((item, index) =>
                                 <tr key={item._id}>
-                                    <td>
+                                    <td className="border">
                                         {index + 1}
                                     </td>
-                                    <td>
+                                    <td className="border">
                                         <div className="flex items-center space-x-3">
                                             <div className="avatar">
                                                 <div className="mask mask-squircle w-12 h-12">
@@ -56,17 +56,17 @@ const MyClass = () => {
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td className="border">
                                         {item.course_name}
                                     </td>
-                                    <td>{item.category}</td>
-                                    <td>{item.student_capacity}</td>
-                                    <th>
+                                    <td className="border">{item.category}</td>
+                                    <td className="border">{item.student_capacity}</td>
+                                    <td className="border">
                                         <button className="btn btn-ghost btn-xs">pending/ approved/ denied</button>
-                                    </th>
-                                    <th>
+                                    </td>
+                                    <td className="border">
                                         <button className="btn btn-ghost btn-xs"></button>
-                                    </th>
+                                    </td>
                                 </tr>
                             )
                         }

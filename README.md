@@ -19,11 +19,11 @@ Assignment Type: BEST DIGITAL PHOTOGRAPHY COURSES
 
 * 4. Live Server Link: http://localhost:5000
 
-* 4. Admin Email and Password: Email: .com, Password: AAaa!!11
+* 4. Admin Email and Password: Email: tasmiah@photography.com, Password: AAaa!!11
 
 * 5. Instructor Email and Password: Email: .com, Password: AAaa!!11
 
-* 6. Student Email and Password: Email: .com, Password: AAaa!!11
+* 6. Student Email and Password: Email: zareef@gmail.com, Password: AAaa!!11
 
 * 7. 
 **/

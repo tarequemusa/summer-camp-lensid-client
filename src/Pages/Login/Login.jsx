@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 import loginAnimation from "../../../public/login-verification.json";
 import {FaGoogle, FaLock} from "react-icons/fa";
 import {AuthContext} from '../../providers/AuthProvider';
-import {GoogleAuthProvider, getAuth, signInWithPopup} from 'firebase/auth';
+import {GoogleAuthProvider, getAuth} from 'firebase/auth';
 import {app} from '../../firebase/firebase.config';
 
 const Login = () => {
@@ -21,7 +21,6 @@ const Login = () => {
     const [user, setUser] = useState();
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-    // const emailRef = useRef();
 
     const handleLogin = event => {
         event.preventDefault();
