@@ -2,6 +2,7 @@ import {Helmet} from "react-helmet-async";
 import useCarts from "../../../hooks/useCarts";
 import {FaTrash} from "react-icons/fa";
 import Swal from "sweetalert2";
+import {Link} from "react-router-dom";
 
 
 const MyCart = () => {
@@ -20,7 +21,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if(result.isConfirmed) {
-                fetch(`https://summer-camp-lensid-server.vercel.app/carts/${ item._id }`, {
+                fetch(`http://localhost:5000/carts/${ item._id }`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -46,7 +47,7 @@ const MyCart = () => {
             <div className="flex flex-col md:flex-col lg:flex-row items-center justify-evenly uppercase font-bold mb-12">
                 <h2 className="text-3xl">Total Order: {cart.length},</h2> &nbsp;
                 <h2 className="text-3xl">Total Price:$ {total.toFixed(2)},</h2>&nbsp;
-                <button className="btn btn-primary">Pay</button>
+                <Link to="/dashboard/payment"><button className="btn btn-primary">Pay</button></Link>
             </div>
             <div className="overflow-hidden">
                 <table className="table ">
@@ -56,7 +57,6 @@ const MyCart = () => {
                             <th>Sl.</th>
                             <th>Photo & Title</th>
                             <th>Course Fee</th>
-                            <th>Pay</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -83,9 +83,6 @@ const MyCart = () => {
                                     </td>
                                     <td>
                                         {item.fee}
-                                    </td>
-                                    <td>
-                                        <button className="btn btn-ghost btn-md text-green-600">Pay</button>
                                     </td>
                                     <td className="text-lg text-red-500"><button onClick={() => handleDelete(item)} className="btn btn-ghost"><FaTrash /></button></td>
                                 </tr>

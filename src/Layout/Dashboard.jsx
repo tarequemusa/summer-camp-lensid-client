@@ -35,13 +35,17 @@ const Dashboard = () => {
                             <img src={user?.photoURL} />
                         </div>
                     </label>}
+                    {
+                        user &&
+                        <Link to='/'><button onClick={handleLogOut} className='btn btn-sm btn-outline rounded-full mx-2'> Log Out</button></Link>
+                    }
                 </div>
             </div>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
-                    <Outlet></Outlet>
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                    <Outlet></Outlet>
 
                 </div>
                 <div className="drawer-side bg-sky-300">
@@ -69,8 +73,8 @@ const Dashboard = () => {
                                             <NavLink to="/dashboard/mycart"><FaUserCircle />My Selected Classes <div className="badge inline badge-secondary">+{cart?.length || 0}</div></NavLink>
 
                                         </li>
-                                        <li><NavLink to="/dashboard/bookedclasses"><FaShoppingCart />My Enrolled Classes</NavLink></li>
-                                        <li><NavLink to="/dashboard/paymenthistory"><FaCreditCard />Payment</NavLink></li>
+                                        <li><NavLink to="/dashboard/enrolledclasses"><FaShoppingCart />My Enrolled Classes</NavLink></li>
+                                        <li><NavLink to="/dashboard/payment"><FaCreditCard />Payment</NavLink></li>
 
                                     </>
                         }
@@ -80,10 +84,6 @@ const Dashboard = () => {
                             <li><NavLink to="/"><FaHome />Home</NavLink></li>
                             <li><NavLink to="/approvedclasses"><FaSchool />Classes</NavLink></li>
                             <li><NavLink to="/allinstructors"><FaUser />Instructors</NavLink></li>
-                            {
-                                user &&
-                                <Link to='/'><button onClick={handleLogOut} className='btn btn-sm btn-outline rounded-full mx-2'> Log Out</button></Link>
-                            }
                         </div>
                     </ul>
 

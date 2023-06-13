@@ -30,9 +30,9 @@ const AuthProviders = ({children}) => {
         return signOut(auth);
     }
 
-    const updateUserProfile = (name, photo) => {
+    const updateUserProfile = (name, photoURL) => {
         return updateProfile(auth.currentUser, {
-            displayName: name, photoURL: photo
+            displayName: name, photoURL: photoURL
         });
     }
 
@@ -44,7 +44,7 @@ const AuthProviders = ({children}) => {
 
             // get and set token
             if(signedUser) {
-                axios.post('https://summer-camp-lensid-server.vercel.app/jwt', {email: signedUser.email})
+                axios.post('http://localhost:5000/jwt', {email: signedUser.email})
                     .then(data => {
                         console.log(data.data.token)
                         localStorage.setItem('access-token', data.data.token)

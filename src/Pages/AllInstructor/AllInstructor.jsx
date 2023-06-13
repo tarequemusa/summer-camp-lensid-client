@@ -7,6 +7,11 @@ import {Link} from "react-router-dom";
 
 const AllInstructor = () => {
     const [instructors] = useInstructor();
+
+    const handleSelectClass = () => {
+
+    }
+
     return (
         <div>
             <Helmet>
@@ -34,7 +39,7 @@ const AllInstructor = () => {
                                     </div>
                                     <p><span className="font-bold">Class Name:</span> {instructor.name_classes.join(', ')}</p>
                                     <div className="card-actions justify-end">
-                                        <Link to="/seeclasses"><button className="btn btn-primary">See Classes</button></Link>
+                                        <Link to="/seeclasses"><button onClick={() => handleSelectClass()} className="btn btn-primary">See Classes</button></Link>
                                     </div>
                                 </div>
                             </div>

@@ -19,7 +19,7 @@ const ApprovedClasses = () => {
         console.log(user);
         if(user && user.email) {
             const cartCourse = {selectId: singleClass._id, image: singleClass.image, title: singleClass.course_name, fee: singleClass.course_fee, seats: singleClass.seats_available, duration: singleClass.duration, email: user.email}
-            fetch('https://summer-camp-lensid-server.vercel.app/carts', {
+            fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

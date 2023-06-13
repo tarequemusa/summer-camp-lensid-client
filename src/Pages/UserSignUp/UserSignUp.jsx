@@ -24,8 +24,8 @@ const UserSignUp = () => {
 
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = {name: data.name, email: data.email, photo: data.photo}
-                        fetch('https://summer-camp-lensid-server.vercel.app/users', {
+                        const saveUser = {name: data.name, email: data.email, photo: data.photoURL}
+                        fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -100,7 +100,7 @@ const UserSignUp = () => {
                                 {errors.confirm_password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters.</p>}
                             </div>
                             <div className="form-control mt-2">
-                                <input type="text" placeholder="Photo URL" {...register("photo", {required: true})} name="photo" className="input input-bordered" />
+                                <input type="text" placeholder="Photo URL" {...register("photoURL", {required: true})} name="photoURL" className="input input-bordered" />
                                 {errors.email && <span className="text-red-600">Photo URL is Required</span>}
                             </div>
                         </div>

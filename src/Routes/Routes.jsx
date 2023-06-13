@@ -17,6 +17,9 @@ import AddClass from "../Pages/Dashboard/Instructor/AddClass/AddClass";
 import MyClass from "../Pages/Dashboard/Instructor/MyClass/MyClass";
 import InstructorRoute from "./InstructorRoute";
 import AdminRoute from "./AdminRoute";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import EnrolledClasses from "../Pages/Dashboard/EnrolledClasses/EnrolledClasses";
+
 
 
 export const router = createBrowserRouter([
@@ -58,6 +61,14 @@ export const router = createBrowserRouter([
             {
                 path: 'mycart',
                 element: <MyCart></MyCart>
+            },
+            {
+                path: 'payment',
+                element: <Payment></Payment>
+            },
+            {
+                path: 'enrolledclasses',
+                element: <EnrolledClasses></EnrolledClasses>
             },
             {
                 path: 'allusers',

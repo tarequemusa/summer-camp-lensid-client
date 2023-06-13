@@ -17,7 +17,7 @@ Assignment Type: BEST DIGITAL PHOTOGRAPHY COURSES
 
 * 3. Live Website Link: https://simple-firebase-1may.web.app/
 
-* 4. Live Server Link: https://summer-camp-lensid-server.vercel.app
+* 4. Live Server Link: http://localhost:5000
 
 * 4. Admin Email and Password: Email: .com, Password: AAaa!!11
 
