@@ -1,5 +1,5 @@
 import {useContext, useState} from 'react';
-import {Link, Navigate, useLocation, useNavigate, } from 'react-router-dom';
+import {Link, useLocation, useNavigate, } from 'react-router-dom';
 import {Helmet} from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import Lottie from "lottie-react";

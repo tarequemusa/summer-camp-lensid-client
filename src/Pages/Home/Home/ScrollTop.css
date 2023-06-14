@@ -1,0 +1,8 @@
+.scroll {
+    font-family: sans-serif;
+    text-align: center;
+    flex: justify;
+    margin: auto;
+    background-color: aqua;
+    block-size: none;
+}

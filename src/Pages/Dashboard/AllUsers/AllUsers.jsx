@@ -1,12 +1,10 @@
 import {useQuery} from "@tanstack/react-query";
-import {useState} from "react";
 import {Helmet} from "react-helmet-async";
 import {FaChalkboardTeacher, FaTrash, FaUserShield} from "react-icons/fa";
 import Swal from "sweetalert2";
 
 
 const AllUsers = () => {
-    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
     const {data: users = [], refetch} =
         useQuery(['users'], async () => {
             const res = await fetch('http://localhost:5000/users')
@@ -14,7 +12,6 @@ const AllUsers = () => {
         })
 
     const handleMakeInstructor = user => {
-        setIsButtonDisabled(true);
         fetch(`http://localhost:5000/users/instructor/${ user }`, {
             method: 'PATCH'
         })
@@ -35,7 +32,6 @@ const AllUsers = () => {
 
     }
     const handleMakeAdmin = user => {
-        setIsButtonDisabled(true);
         fetch(`http://localhost:5000/users/admin/${ user._id }`, {
             method: 'PATCH'
         })

@@ -8,6 +8,7 @@ import DarkLight from '../../../Components/DarkLight/DarkLight';
 
 
 
+
 const NavBar = () => {
     const {user, logOut} = useContext(AuthContext);
     const [cart] = useCarts();

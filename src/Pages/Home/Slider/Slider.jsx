@@ -20,7 +20,7 @@ const Slider = () => {
                                 BEST DIGITAL PHOTOGRAPHY COURSES FOR YOU
                             </h2></Zoom>
                         </div>
-                        <div className="flex justify-center flex-col lg:flex-row mt-10 gap-5 mx-auto">
+                        <div className="flex justify-center items-center flex-col lg:flex-row mt-10 gap-5 mx-auto">
                             <Slide>
                                 <button className="btn btn-outline btn-primary px-12 py-12 content-around text-lg">Beginner Level</button>
                                 <button className="btn btn-outline btn-secondary px-12 py-12 content-around text-lg">100% Online</button>
