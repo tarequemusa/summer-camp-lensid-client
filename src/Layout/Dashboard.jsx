@@ -55,20 +55,20 @@ const Dashboard = () => {
                         {
                             isAdmin ? <>
                                 <h3 className="text-2xl font-bold text-black bg-gray-200 px-2">Admin Dashboard</h3>
-                                <li><NavLink to="/dashboard"><FaHome />Admin Home</NavLink></li>
+                                <li><NavLink to="/dashboard/adminhome"><FaHome />Admin Home</NavLink></li>
                                 <li><NavLink to="/dashboard/mycart"><FaSchool />Manage Classes</NavLink></li>
                                 <li><NavLink to="allusers"><FaUser />Manage Users</NavLink></li>
                             </> :
                                 isInstructor ?
                                     <>
                                         <h3 className="text-2xl font-bold text-black bg-gray-200 px-2">Instructor Dashboard</h3>
-                                        <li><NavLink to="/dashboard"><FaHome />Instructor Home</NavLink></li>
+                                        <li><NavLink to="/dashboard/instructorhome"><FaHome />Instructor Home</NavLink></li>
                                         <li><NavLink to="/dashboard/addclass"><FaSchool />Add a Class</NavLink></li>
                                         <li><NavLink to="/dashboard/myclass"><FaUser />My Class</NavLink></li>
                                     </> :
                                     <>
                                         <h3 className="text-2xl font-bold text-black bg-gray-200 px-2">Student Dashboard</h3>
-                                        <li><NavLink to="/dashboard"><FaHome />My Home</NavLink></li>
+                                        <li><NavLink to="/dashboard/studenthome"><FaHome />My Home</NavLink></li>
                                         <li>
                                             <NavLink to="/dashboard/mycart"><FaUserCircle />My Selected Classes <div className="badge inline badge-secondary">+{cart?.length || 0}</div></NavLink>
 

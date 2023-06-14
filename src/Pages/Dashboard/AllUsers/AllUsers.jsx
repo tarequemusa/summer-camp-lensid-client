@@ -1,10 +1,12 @@
 import {useQuery} from "@tanstack/react-query";
+import {useState} from "react";
 import {Helmet} from "react-helmet-async";
 import {FaChalkboardTeacher, FaTrash, FaUserShield} from "react-icons/fa";
 import Swal from "sweetalert2";
 
 
 const AllUsers = () => {
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
     const {data: users = [], refetch} =
         useQuery(['users'], async () => {
             const res = await fetch('http://localhost:5000/users')
@@ -12,6 +14,7 @@ const AllUsers = () => {
         })
 
     const handleMakeInstructor = user => {
+        setIsButtonDisabled(true);
         fetch(`http://localhost:5000/users/instructor/${ user }`, {
             method: 'PATCH'
         })
@@ -32,6 +35,7 @@ const AllUsers = () => {
 
     }
     const handleMakeAdmin = user => {
+        setIsButtonDisabled(true);
         fetch(`http://localhost:5000/users/admin/${ user._id }`, {
             method: 'PATCH'
         })
@@ -128,9 +132,9 @@ const AllUsers = () => {
                                     <td>
                                         {user.email}
                                     </td>
-                                    <td><button onClick={() => handleMakeInstructor(user._id)} className="btn btn-ghost btn-md text-sky-600" title="Instructor">{user.role === 'instructor' ? 'instructor' : <FaChalkboardTeacher />}</button></td>
+                                    <td><button onClick={() => handleMakeInstructor(user._id)} disabled={user.role === 'instructor'} className="btn btn-ghost btn-md text-sky-600" title="Instructor">{user.role === 'instructor' ? 'instructor' : <FaChalkboardTeacher />}</button></td>
                                     <td>
-                                        <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost btn-md" title="Admin">{user.role === 'admin' ? 'admin' : <FaUserShield />}</button>
+                                        <button onClick={() => handleMakeAdmin(user)} disabled={user.role === 'admin'} className="btn btn-ghost btn-md" title="Admin">{user.role === 'admin' ? 'admin' : <FaUserShield />}</button>
                                     </td>
                                     <td className="text-lg text-red-500"><button onClick={() => handleDelete(user)} className="btn btn-ghost"><FaTrash /></button></td>
                                 </tr>

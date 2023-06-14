@@ -7,6 +7,7 @@ import useCarts from '../../../hooks/useCarts';
 import DarkLight from '../../../Components/DarkLight/DarkLight';
 
 
+
 const NavBar = () => {
     const {user, logOut} = useContext(AuthContext);
     const [cart] = useCarts();
@@ -22,7 +23,9 @@ const NavBar = () => {
             <li className='text-green-800 text-lg'><Link to="/">Home</Link></li>
             <li className='text-green-800 text-lg'><Link to="allinstructors">Instructor</Link></li>
             <li className='text-green-800 text-lg'><Link to="approvedclasses">Classes</Link></li>
-            <li className='text-green-800 text-lg'><Link to="/">Blogs</Link></li>
+            {/* {
+                isAdmin ? <li className='text-green-800 text-lg'><Link to="/dashboard/adminhome">Dashboard</Link></li> : isInstructor ? <li className='text-green-800 text-lg'><Link to="/dashboard/instructorhome">Dashboard</Link></li> : <li className='text-green-800 text-lg'><Link to="/dashboard/studenthome">Dashboard</Link></li>
+            } */}
         </>
 
     return (
