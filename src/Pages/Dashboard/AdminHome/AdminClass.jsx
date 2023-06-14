@@ -1,8 +1,8 @@
-import {Helmet} from "react-helmet-async";
-import SectionTitle from "../../../../Components/SectionTitle/SectionTitle";
-import useMyAddedClass from "../../../../hooks/useMyAddedClass";
+// import {Helmet} from "react-helmet-async";
+// import SectionTitle from "../../../Components/SectionTitle";
+import useMyAddedClass from "../../../hooks/useMyAddedClass";
 import {useContext} from "react";
-import {AuthContext} from "../../../../providers/AuthProvider";
+import {AuthContext} from "../../../providers/AuthProvider";
 
 
 
@@ -13,13 +13,13 @@ const MyClass = () => {
 
     return (
         <div>
-            <Helmet>
-                <title>My Added Class | LensID An Institute of Photography</title>
+            {/* <Helmet>
+                <title>Added Class | LensID An Institute of Photography since 2020</title>
             </Helmet>
             <SectionTitle
-                subHeading="My All Photography Classes"
-                heading="Added Class"
-            ></SectionTitle>
+                subHeading="All Photography Classes from Instructor"
+                heading="Photography Classes"
+            ></SectionTitle> */}
             <div className="flex justify-between gap-4 w-full my-12 border-b-2">
                 <h2 className="text-xl"><span className="font-bold text-sky-700">Instructor Name: </span>{user.displayName},</h2>
                 <h2 className="text-xl"><span className="font-bold text-sky-700">Instructor Email:</span> {user.email}</h2>

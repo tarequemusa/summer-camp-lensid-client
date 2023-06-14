@@ -40,7 +40,6 @@ const AuthProviders = ({children}) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, signedUser => {
             console.log('Logged in User inside auth state observer', signedUser);
-            setUser(signedUser);
 
             // get and set token
             if(signedUser) {
@@ -48,13 +47,16 @@ const AuthProviders = ({children}) => {
                     .then(data => {
                         console.log(data.data.token)
                         localStorage.setItem('access-token', data.data.token)
+                        setUser(signedUser);
+                        setLoading(false);
                     })
             }
             else {
                 localStorage.removeItem('access-token')
+                setUser(signedUser);
+                setLoading(false);
             }
 
-            setLoading(false);
         })
         return () => {
             return unsubscribe();

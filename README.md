@@ -17,11 +17,11 @@ Assignment Type: BEST DIGITAL PHOTOGRAPHY COURSES
 
 * 3. Live Website Link: https://simple-firebase-1may.web.app
 
-* 4. Live Server Link: http://localhost:5000
+* 4. Live Server Link: https://summer-camp-lensid-server-tarequemusa.vercel.app
 
 * 4. Admin Email and Password: Email: tasmiah@photography.com, Password: AAaa!!11
 
-* 5. Instructor Email and Password: Email: tanjib@ewubd.edu, Password: AAaa!!11
+* 5. Instructor Email and Password: Email: farhan@gmail.com, Password: AAaa!!11
 
 * 6. Student Email and Password: Email: zareef@gmail.com, Password: AAaa!!11
 

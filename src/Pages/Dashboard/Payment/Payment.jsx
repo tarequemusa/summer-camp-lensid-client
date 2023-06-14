@@ -11,7 +11,7 @@ const Payment = () => {
     const total = cart.reduce((sum, item) => sum + item.fee, 0);
     const fee = parseFloat(total.toFixed(2))
     return (
-        <div className="w-full">
+        <div className="w-full bg-[url('https://i.ibb.co/4pj9bmZ/Stripe.png')] bg-cover bg-opacity-0">
             <div>
                 <Helmet>
                     <title>Payment | LensID An Institute of Photography since 2020</title>
@@ -19,16 +19,16 @@ const Payment = () => {
                 <div className="w-full">
                     <SectionTitle
                         subHeading="Pay Your Course Fees"
-                        heading="Payment Section"
+                        heading="Payment Section: Pay Stripe"
                     ></SectionTitle>
+
                 </div>
             </div>
-
-            <Elements stripe={stripePromise}>
-                <CheckoutForm cart={cart} fee={fee}></CheckoutForm>
-            </Elements>
-
-
+            <div className="bg-white bg-opacity-90">
+                <Elements stripe={stripePromise}>
+                    <CheckoutForm cart={cart} fee={fee}></CheckoutForm>
+                </Elements>
+            </div>
         </div>
     );
 };

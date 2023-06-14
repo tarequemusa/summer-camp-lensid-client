@@ -9,7 +9,7 @@ const useCarts = () => {
 
     const {refetch, data: cart = []} = useQuery({
         queryKey: ['carts', user?.email],
-
+        enabled: !!user,
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/carts?email=${ user?.email }`, {
                 headers: {

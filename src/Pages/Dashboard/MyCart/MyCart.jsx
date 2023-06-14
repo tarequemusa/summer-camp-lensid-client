@@ -3,10 +3,13 @@ import useCarts from "../../../hooks/useCarts";
 import {FaTrash} from "react-icons/fa";
 import Swal from "sweetalert2";
 import {Link} from "react-router-dom";
+import {useContext} from "react";
+import {AuthContext} from "../../../providers/AuthProvider";
 
 
 const MyCart = () => {
     const [cart, refetch] = useCarts();
+    const {user} = useContext(AuthContext);
     console.log(cart);
     const total = cart.reduce((sum, item) => item.fee + sum, 0);
 
@@ -54,10 +57,11 @@ const MyCart = () => {
                     {/* head */}
                     <thead className="bg-sky-200 text-center">
                         <tr>
-                            <th>Sl.</th>
-                            <th>Photo & Title</th>
-                            <th>Course Fee</th>
-                            <th>Action</th>
+                            <th className="border">Sl.</th>
+                            <th className="border">Photo & Title</th>
+                            <th className="border">Course Fee</th>
+                            <th className="border">Email</th>
+                            <th className="border">Action</th>
                         </tr>
                     </thead>
                     <tbody className="text-center">
@@ -68,7 +72,7 @@ const MyCart = () => {
                                     <td>
                                         {index + 1}
                                     </td>
-                                    <td>
+                                    <td className="border">
                                         <div className="flex items-center space-x-3">
                                             <div className="avatar">
                                                 <div className="mask mask-squircle w-12 h-12">
@@ -81,10 +85,13 @@ const MyCart = () => {
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td className="border">
                                         {item.fee}
                                     </td>
-                                    <td className="text-lg text-red-500"><button onClick={() => handleDelete(item)} className="btn btn-ghost"><FaTrash /></button></td>
+                                    <td className="border">
+                                        {user?.email}
+                                    </td>
+                                    <td className="text-lg border text-red-500"><button onClick={() => handleDelete(item)} className="btn btn-ghost"><FaTrash /></button></td>
                                 </tr>
                             )
                         }
