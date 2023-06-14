@@ -12,7 +12,7 @@ const Payment = () => {
     const fee = parseFloat(total.toFixed(2))
     return (
         <div className="w-full bg-[url('https://i.ibb.co/4pj9bmZ/Stripe.png')] bg-cover bg-opacity-0">
-            <div>
+            <div className="bg-white bg-opacity-90">
                 <Helmet>
                     <title>Payment | LensID An Institute of Photography since 2020</title>
                 </Helmet>

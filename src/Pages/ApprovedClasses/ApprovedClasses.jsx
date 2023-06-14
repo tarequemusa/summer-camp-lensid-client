@@ -19,7 +19,7 @@ const ApprovedClasses = () => {
         console.log(user);
         if(user && user.email) {
             const cartCourse = {selectId: singleClass._id, image: singleClass.image, title: singleClass.course_name, fee: singleClass.course_fee, seats: singleClass.seats_available, duration: singleClass.duration, email: user.email}
-            fetch('http://localhost:5000/carts', {
+            fetch('https://summer-camp-lensid-server-tarequemusa.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -79,7 +79,7 @@ const ApprovedClasses = () => {
                                     <div className="flex items-center justify-between gap-5">
                                         <div>
                                             <p className="text-green-700 font-semibold">Fee: ${singleClass.course_fee}</p>
-                                            <p className="text-green-700 font-semibold py-1">Duration: {singleClass.duration}</p>
+                                            <p className="text-green-700 font-semibold py-1">Duration: {singleClass.duration} &nbsp;Week</p>
                                             <p className="text-green-700 font-semibold">No. of Seats: {singleClass.seats_available}</p>
                                         </div>
                                         <Link><button onClick={() => handleAddToCart(singleClass)} className="btn btn-info btn-sm">Select Course</button></Link>

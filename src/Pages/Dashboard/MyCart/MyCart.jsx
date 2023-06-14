@@ -1,6 +1,6 @@
 import {Helmet} from "react-helmet-async";
 import useCarts from "../../../hooks/useCarts";
-import {FaTrash} from "react-icons/fa";
+import {FaCheckCircle, FaClock, FaTrash} from "react-icons/fa";
 import Swal from "sweetalert2";
 import {Link} from "react-router-dom";
 import {useContext} from "react";
@@ -24,7 +24,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if(result.isConfirmed) {
-                fetch(`http://localhost:5000/carts/${ item._id }`, {
+                fetch(`https://summer-camp-lensid-server-tarequemusa.vercel.app/carts/${ item._id }`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -56,11 +56,12 @@ const MyCart = () => {
                 <table className="table ">
                     {/* head */}
                     <thead className="bg-sky-200 text-center">
-                        <tr>
+                        <tr className="bg-sky-200 font-bold text-lg">
                             <th className="border">Sl.</th>
                             <th className="border">Photo & Title</th>
                             <th className="border">Course Fee</th>
                             <th className="border">Email</th>
+                            <th className="border">Available Seats</th>
                             <th className="border">Action</th>
                         </tr>
                     </thead>
@@ -91,7 +92,16 @@ const MyCart = () => {
                                     <td className="border">
                                         {user?.email}
                                     </td>
-                                    <td className="text-lg border text-red-500"><button onClick={() => handleDelete(item)} className="btn btn-ghost"><FaTrash /></button></td>
+                                    <td className="border">
+                                        {item.seats}
+                                    </td>
+                                    <td className="text-lg border text-red-500"><button onClick={() => handleDelete(item)} className="btn btn-ghost"><FaTrash /></button>
+                                        <div className="flex justify-center items-center border-t-2">
+                                            <div><button className="btn btn-ghost btn-sm text-green-700" title="Approve"><FaCheckCircle /></button></div>
+                                            <div><button className="btn btn-ghost btn-sm outline-2 p-2 outline-red-700 text-red-700" title="Deny">X</button></div>
+                                            <div><button className="btn btn-ghost btn-sm text-yellow-500" title="Pending"><FaClock /></button></div>
+                                        </div>
+                                    </td>
                                 </tr>
                             )
                         }

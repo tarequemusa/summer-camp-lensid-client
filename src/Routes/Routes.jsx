@@ -55,7 +55,7 @@ export const router = createBrowserRouter([
             {
                 path: 'secret',
                 element: <PrivateRoutes><Secret /></PrivateRoutes>
-            }
+            },
         ],
     },
     {

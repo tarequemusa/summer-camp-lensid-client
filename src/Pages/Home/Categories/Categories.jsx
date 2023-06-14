@@ -1,6 +1,6 @@
 import {FaCamera} from "react-icons/fa";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import {Fade, Slide, Zoom} from "react-awesome-reveal";
+import {Rotate, Slide, Zoom} from "react-awesome-reveal";
 
 const Categories = () => {
     return (
@@ -33,7 +33,7 @@ const Categories = () => {
                         </div>
                     </div>
                 </Zoom>
-                <Fade cascade damping={0.1}>
+                <Rotate duration={2000}>
                     <div className="card w-full">
                         <div className="card-body">
                             <figure><img className="w-[50%] outline outline-gray-300 rounded-2xl" src="https://startertemplatecloud.com/g34/wp-content/uploads/sites/58/2022/01/retouching.jpg" alt="car!" /></figure>
@@ -54,7 +54,7 @@ const Categories = () => {
                             </div>
                         </div>
                     </div>
-                </Fade>
+                </Rotate>
                 <Slide cascade damping={0.1}>
                     <div className="card w-full">
                         <div className="card-body">

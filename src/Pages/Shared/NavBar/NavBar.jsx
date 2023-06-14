@@ -43,7 +43,7 @@ const NavBar = () => {
                     </div>
                     <div>
                         <Link to="/"><img className='w-[100%] md:w-[50%] lg:w-[55%]' src={NavLogo} alt="" /></Link>
-                        <p className='text-green-950 hidden md:visible lg:collapse'><small>An Institute of Photography</small></p>
+                        <p className='text-green-950 hidden md:visible lg:collapse text-lg'><small>An Institute of Photography Since 2020</small></p>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">

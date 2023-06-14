@@ -10,7 +10,7 @@ const useMyAddedClass = () => {
         queryKey: ['class', user?.email],
 
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/class/${ user?.email }`, {
+            const res = await fetch(`https://summer-camp-lensid-server-tarequemusa.vercel.app/class/${ user?.email }`, {
                 headers: {
                     authorization: `bearer ${ token }`
                 }

@@ -21,13 +21,13 @@ const EnrolledClasses = () => {
                     <table className="table">
                         {/* head */}
                         <thead className="text-center border">
-                            <tr>
-                                <th>Sl.</th>
-                                <th>
+                            <tr className="bg-sky-200 font-bold text-lg">
+                                <th className="border">Sl.</th>
+                                <th className="border">
                                     Quantity
                                 </th>
-                                <th>Enrolled Classes</th>
-                                <th>Status</th>
+                                <th className="border">Enrolled Classes</th>
+                                <th className="border">Status</th>
                             </tr>
                         </thead>
                         <tbody className="text-center">
